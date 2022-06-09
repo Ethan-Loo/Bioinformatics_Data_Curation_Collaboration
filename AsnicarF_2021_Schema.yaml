@@ -11,29 +11,29 @@ imports:
 default_range: string
 
 classes:
-#  Always_Required:
-#    abstract: true
-#    slots:
-#      -  sample_id
-#      -  subject_id
-#      -  age
-#      -  gender
-  study_name:
-    attributes:
-      required: true
-      multivalued: true
-      inlined_as_list: true
-      range: Study
-  Study:
-#    is_a: Always_Required
-    attributes:
-    #class_uri: schema:Person
-
-    slots:   ## specified as a list
+  Always_Required:
+    abstract: true
+    slots:
       -  sample_id
       -  subject_id
       -  age
       -  gender
+#  study_name:
+#    attributes:
+#      required: true
+#      multivalued: true
+#      inlined_as_list: true
+#      range: Study
+  Study:
+    is_a: Always_Required
+    attributes:
+    #class_uri: schema:Person
+
+    slots:   ## specified as a list
+#      -  sample_id
+#      -  subject_id
+#      -  age
+#      -  gender
       -  body_site
       -  antibiotics_current_use
       -  study_condition
@@ -56,10 +56,10 @@ classes:
 #    -  ORCID
   Container:
     attributes:
-      study:
+      AsnicarF_2021:
         multivalued: true
         inlined_as_list: true
-        range: study_name
+        range: Study
 
 # slots are first-class entities in the metamodel
 # delcaring them here allows them to be reused elsewhere
@@ -146,9 +146,9 @@ slots:
 enums:
   YesNo:
     permissible_values:
-      yes:
-      no:
-      unknown:
+      'yes':
+      'no': 
+      'unknown': 
   cat_age:
     permissible_values:
       child:
