@@ -18,8 +18,12 @@ classes:
 #      -  subject_id
 #      -  age
 #      -  gender
-
-
+  study_name:
+    attributes:
+      required: true
+      multivalued: true
+      inlined_as_list: true
+      range: Study
   Study:
 #    is_a: Always_Required
     attributes:
@@ -52,10 +56,10 @@ classes:
 #    -  ORCID
   Container:
     attributes:
-      studies:
+      study:
         multivalued: true
         inlined_as_list: true
-        range: Study
+        range: study_name
 
 # slots are first-class entities in the metamodel
 # delcaring them here allows them to be reused elsewhere
