@@ -1,5 +1,5 @@
-id: https://w3id.org/linkml/examples/personinfo
-name: AsnicarF_2021
+id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
+name: AsnicarF_2021 # Need to change this to a general name for validating files
 prefixes:
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
@@ -37,14 +37,24 @@ classes:
 #      -  age
 #      -  gender
       -  body_site
+      -  body_subsite
       -  antibiotics_current_use
+      -  antibiotics_family
       -  study_condition
       -  disease
+      -  disease_subtype
+      -  infant_age
       -  age_category
+      -  visit_number
       -  BMI
       -  country
-      -  family
+      -  location
+      -  population
+      -  travel_destination
       -  non_westernized
+      -  lifestyle
+      -  brinkman_index
+      -  days_from_first_collection
       -  sequencing_platform
       -  DNA_extraction_kit
       -  PMID
@@ -53,9 +63,117 @@ classes:
       -  minimum_read_length
       -  median_read_length
       -  NCBI_accession
+      -  pregnant
+      -  lactating
+      -  birth_control_pil
+      -  smoker
+      -  ever_smoker
+      -  alcohol
+      -  alcohol_numeric
+      -  mumps
+      -  ajcc
+      -  fobt
+      -  tnm
+      -  days_after_onset
+      -  stec_count
+      -  shigatoxin_2_elisa
+      -  stool_texture
+      -  insulin_cat
+      -  inr
+      -  protein_intake
+      -  flg_genotype
+      -  momeducat
+      -  hitchip_probe_class
+      -  hitchip_probe_number
+      -  mgs_richness
+      -  hla_drb12
+      -  hla_dqa12
+      -  hla_dqa11
+      -  hla_drb11
+      -  hla_dbq12
+      -  hla_dbq11
+      -  ctp
+      -  start_solidfood
+      -  triglycerides
+      -  cholesterol
+      -  hdl
+      -  ldl
+      -  ALT
+      -  eGFR
+      -  adiponectin
+      -  fasting_insulin
+      -  hba1c
+      -  c_peptide
+      -  glp_1
+      -  cd163
+      -  il_1
+      -  leptin
+      -  glucose
+      -  fasting_glucose
+      -  fgf_19
+      -  glutamate_decarboxylase_2_antibody
+      -  creatinine
+      -  creatine
+      -  albumine
+      -  bilubirin
+      -  prothrombin_time
+      -  dyastolic_p
+      -  systolic_p
+      -  hscrp
+      -  ferm_milk_prod_consumer
+      -  family
+      -  family_role
+      -  born_method
+      -  c_section_type
+      -  premature
+      -  birth_order
+      -  age_twins_started_to_live_apart
+      -  feeding_practice
+      -  breastfeeding_duration
+      -  formula_first_day
+      -  ESR
+      -  HLA
+      -  autoantibody_positive
+      -  age_seroconversion
+      -  age_T1D_diagnosis
+      -  disease_stage
+      -  disease_location
+      -  calprotectin
+      -  treatment
+      -  remission
+      -  anti_PD_1
+      -  wbc
+      -  rbc
+      -  blood_platelet
+      -  hemoglobinometry
+      -  ast
+      -  alt
+      -  globulin
+      -  urea_nitrogen
+      -  ASO
+      -  anti_ccp_antibody
+      -  rheumatoid_factor
+      -  dental_sample_type
+      -  history_of_periodontitis
+      -  PPD_M
+      -  PPD_B
+      -  PPD_D
+      -  PPD_L
+      -  zigosity
+      -  menopausal_status
+      -  BASDAI
+      -  BASFI
+      -  HBI
+      -  SCCAI
+      -  birth_weight
+      -  gestational_age
+      -  diet
+      -  subcohort
+      -  RECIST
+      -  ORR
+      -  PFS12
       -  curator
-#    id_prefixes:
-#    -  ORCID
+      -  uncurated_metadata
   Container:
     attributes:
       AsnicarF_2021:
@@ -63,16 +181,13 @@ classes:
         inlined_as_list: true
         range: Study
 
-#      study_name:
-#        attribues:
-#          multivalued: false
  # *_metadata.tsv:
 
 # slots are first-class entities in the metamodel
 # delcaring them here allows them to be reused elsewhere
 slots:
   study_name:
-#    range: 'character'
+    range: Study
     required: false
     multivalued: false
     pattern: '[a-zA-Z-]+_[0-9]4}|[a-zA-Z-]+_[0-9]4}[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z0-9]+'
