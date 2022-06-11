@@ -32,10 +32,6 @@ classes:
     attributes:
     #class_uri: schema:Person
     slots:   ## specified as a list
-#      -  sample_id
-#      -  subject_id
-#      -  age
-#      -  gender
       -  body_site
       -  body_subsite
       -  antibiotics_current_use
