@@ -1,0 +1,414 @@
+
+ACVD:
+  description: atherosclerosis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0003914
+
+
+acute_diarrhoea:
+  description: acute diarrhea
+  meaning:  http://purl.obolibrary.org/obo/DOID_0050140
+
+
+cellulitis:
+  description: cellulitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0003035
+
+
+melanoma:
+  description: melanoma
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000756
+
+
+gangrene:
+  description: gangrene
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0008574
+
+
+osteoarthritis:
+  description: osteoarthritis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0002506
+
+
+control:
+  description: control
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0001461
+
+
+NK:
+  description: natural killer cell
+  meaning:
+
+
+pyelonefritis:
+  description: pyelonephritis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_1001141
+
+
+salmonellosis:
+  description: salmonellosis
+  meaning:
+
+
+sepsis:
+  description: sepsis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_1001478
+
+
+skininf:
+  description: skin infection
+  meaning:
+
+
+suspinf:
+  description:
+  meaning:
+
+
+arthritis:
+  description: arthritis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0005856
+
+
+STEC:
+  description: shiga toxin
+  meaning:
+
+
+CRC:
+  description: colorectal Cancer
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0005842
+
+
+adenoma:
+  description: adenoma
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000232
+
+
+fatty_liver:
+  description: fatty liver
+  meaning:  http://purl.obolibrary.org/obo/MONDO_0004790
+
+
+hypertension:
+  description: hypertension
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000537
+
+
+pre-hypertension:
+  description:
+  meaning:
+
+
+coeliac:
+  description: celiac disease
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0001060
+
+
+asthma:
+  description: asthma
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000270
+
+
+gestational_diabetes:
+  description: gestational diabetes
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0004593
+
+
+cirrhosis:
+  description: cirrhosis of liver
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0001422
+
+
+HBV:
+  description: hepatitis B virus infection
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0004197
+
+
+HDV:
+  description: hepatitis D virus infection
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0007304
+
+
+HEV:
+  description: hepatitis E virus infection
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0007303
+
+
+CMV:
+  description: cytomegalovirus infection
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0001062
+
+
+CDI:
+  description: clostridium difficile infection
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0009130
+
+
+IBD:
+  description: irritable bowel syndrome
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000555
+
+
+T2D:
+  description: type 2 diabetes mellitus
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0001360
+
+
+T1D:
+  description: type 1 diabetes mellitus
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0001359
+
+
+AD:
+  description: alzheimer's disease
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000249
+
+
+AR:
+  description:
+  meaning:
+
+
+IGT:
+  description: abnormal glucose tolerance
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0002546
+
+
+schizophrenia:
+  description: schizophrenia
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000692
+
+
+ascites:
+  description: ascites
+  meaning:
+
+
+wilson:
+  description: wilson disease
+  meaning:
+
+
+otitis:
+  description: otitis
+  meaning:
+
+
+bronchitis:
+  description: bronchitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0009661
+
+
+pneumonia:
+  description: pneumonia
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0003106
+
+
+respiratoryinf:
+  description: respiratory tract infection
+  meaning:
+
+
+cough:
+  description: cough
+  meaning:
+
+
+stomatitis:
+  description: stomatitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0009688
+
+
+fever:
+  description: fever
+  meaning:
+
+
+pyelonephritis:
+  description: pyelonephritis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_1001141
+
+
+infectiousgastroenteritis:
+  description: gastroenteritis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_1001463
+
+
+tonsillitis:
+  description: Tonsillitis
+  meaning:
+
+
+cystitis:
+  description: cystitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_1000025
+
+
+abdominalhernia:
+  description: abdominal Hernia
+  meaning:
+
+
+psoriasis:
+  description: psoriasis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000676
+
+
+cephalosporins:
+  description: cephalosporins
+  meaning:
+
+
+AS:
+  description: ankylosing spondylitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0003898
+
+
+RA:
+  description: rheumatoid Arthritis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000685
+
+
+metabolic_syndrome:
+  description: metabolic syndrome
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000195
+
+
+FMT:
+  description: arabidopsis thaliana
+  meaning:
+
+
+premature_born:
+  description: premature birth
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0003917
+
+
+periodontitis:
+  description: periodontitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000649
+
+
+SRP:
+  description:
+  meaning:
+
+
+STH:
+  description: somatotropin
+  meaning:
+
+
+BD:
+  description: behcet's syndrome
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0003780
+
+
+chorioamnionitis:
+  description: chorioamnionitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0009948
+
+
+pre-eclampsia:
+  description: preeclampsia
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000668
+
+
+carcinoma_surgery_history:
+  description:
+  meaning:
+
+
+healthy:
+  description: healthy
+  meaning:
+
+
+hepatitis:
+  description: hepatitis
+  meaning:  http://purl.obolibrary.org/obo/HP_0012115
+
+
+hypercholesterolemia:
+  description: hypercholesterolemia
+  meaning:  http://purl.obolibrary.org/obo/HP_0003124
+
+
+ascaris_lumbricoides:
+  description: ascaris lumbricoides
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0007154
+
+
+necator_americanus:
+  description: necator americanus
+  meaning:
+
+
+trichuris_trichiura:
+  description: trichuris trichiura
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0007524
+
+
+metastases:
+  description:
+  meaning:
+
+
+CD:
+  description: crohn's disease
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000384
+
+
+UC:
+  description: ulcerative Colitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000729
+
+
+smalladenoma:
+  description: small intestinal adenoma
+  meaning:
+
+
+largeadenoma:
+  description: large intestinal adenoma
+  meaning:
+
+
+advancedadenoma:
+  description:
+  meaning:
+
+
+adenocarcinoma:
+  description: adenocarcinoma
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000228
+
+
+carcinoma:
+  description: carcinoma
+  meaning:  http://www.ebi.ac.uk/efo/EFO_0000313
+
+
+cholera:
+  description: cholera
+  meaning:
+
+
+T1D_nonconverter:
+  description:
+  meaning:
+
+
+T1D_seroconverter:
+  description:
+  meaning:
+
+
+NAFLD:
+  description: non alcoholic fatty liver disease
+  meaning:  http://www.ebi.ac.uk/efo/EFO_1001248
+
+
+Indeterminate_colitis:
+  description: indeterminate colitis
+  meaning:  http://www.ebi.ac.uk/efo/EFO_1000034

@@ -1,0 +1,87 @@
+stool:
+  description: feces
+  meaning: UBERON_0001988
+skin:
+  description: skin of body
+  meaning: UBERON_0002097
+vagina:
+  description: vagina
+  meaning: UBERON_0000996
+oralcavity:
+  description: oral cavity
+  meaning: UBERON_0000167
+nasalcavity:
+  description: nasal cavity
+  meaning: UBERON_0001707
+lung:
+  description: lung
+  meaning: UBERON_0002048
+milk:
+  description: milk
+  meaning: UBERON_0001913
+anterior_nares:
+  description: anterior naris
+  meaning: UBERON_2001427
+hard_palate:
+  description: hard palate
+  meaning: UBERON_0003216
+keratinized_gingiva:
+  description: gingival epithelium
+  meaning: UBERON_0001949
+l_retroauricular_crease:
+  description: skin crease
+  meaning: UBERON_0019243
+r_retroauricular_crease:
+  description: skin crease
+  meaning: UBERON_0019243
+mid_vagina:
+  description: median vaginal canal
+  meaning: UBERON_0013524
+palatine_tonsils:
+  description: palatine tonsil
+  meaning: UBERON_0002373
+saliva:
+  description: saliva
+  meaning: UBERON_0001836
+supragingival_plaque:
+  description: supragingival dental plaque
+  meaning: UBERON_0016485
+subgingival_plaque:
+  description: subgingival dental plaque
+  meaning: UBERON_0016484
+throat:
+  description: throat
+  meaning: UBERON_0000341
+vaginal_introitus:
+  description: vaginal oriface
+  meaning: UBERON_0012317
+posterior_fornix:
+  description: posterior fornix of vagina
+  meaning: UBERON_0016486
+tongue_dorsum:
+  description: dorsum of tongue
+  meaning: UBERON_0009471
+sputum:
+  description: sputum
+  meaning: UBERON_0007311
+buccal_mucosa:
+  description: buccal mucosa
+  meaning: UBERON_0006956
+left_elbow:
+  description: elbow
+  meaning: UBERON_0001461
+right_ear:
+  description: right ear
+  meaning: UBERON_0035174
+left_ear:
+  description: left ear
+  meaning: UBERON_0035295
+right_elbow:
+  description: elbow
+  meaning: UBERON_0001461
+rectal_swab:
+  description: rectal swab specimen
+  meaning: NCIT_C173641
+chest:
+  description: chest
+  meaning: UBERON_0001443
