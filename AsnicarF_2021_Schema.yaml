@@ -197,7 +197,6 @@ slots:
     description: 'Sample identifier.'
 
   subject_id:
-#    range: 'character'
     required: true
     multivalued: false
     pattern: '[0-9a-zA-Z_]'
@@ -222,7 +221,6 @@ slots:
     description: 'Subject is currently taking antibiotics.'
 
   antibiotics_family:
-#    range: 'character'
     required: false
     multivalued: true
     pattern: 'dopamine_antagonists|phenylpiperidines|thienobenzodiazepines|blood_pressure_medication|diabetes_oral_medication|anti_retrovirals|beta_blockers|reverse_transcriptase_inhibitors|anti_virals|cephalosporins|penicillins|macrolides|beta_lactamase_inhibitors|nitrofurans|sulphonamides|aminoglycosides|carbapenems|fluoroquinolones|laxatives|none'
@@ -264,17 +262,15 @@ slots:
     description: 'Infant age (days); should be used for infants < 2 years old.'
 
   age_category:
-#    range: 'character'
+    range: cat_age
     required: false
     multivalued: false
-    pattern: 'newborn|child|schoolage|adult|senior'
     description: 'Age category: newborn < 1 year; 1 <= child < 12; 12 <= schoolage < 19; 19 <= adult <= 65; senior > 65.'
 
   gender:
-#    range: 'character'
+    range: Gender
     required: false
     multivalued: false
-    pattern: 'female|male|other'
     description: 'Subject gender.'
 
   visit_number:
@@ -292,28 +288,24 @@ slots:
     description: 'Body mass index (kg/m2).'
 
   country:
-#    range: 'character'
     required: true
     multivalued: false
     pattern: 'LBR|SLV|CAN|DNK|EST|FJI|FIN|FRA|DEU|ITA|MNG|NLD|NOR|JPN|ESP|KOR|BRA|IRL|PHL|SWE|USA|GBR|CHN|RUS|LUX|AUT|TZA|PER|MDG|ISL|BRN|IDN|MYS|HUN|SVK|SGP|ISR|BGD|KAZ|IND|GHA|ETH|JPN|CMR'
     description: 'Country of acquisition using ISO3 code from http://www.fao.org/countryprofiles/iso3list/en/.'
 
   location:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: '.+'
     description: 'Free-form additional location information.'
 
   population:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: '[a-zA-Z]\\S+'
     description: 'can describe the belonging to a specific population'
 
   travel_destination:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'CMR|ETH|KEN|TZA|RWA|IND|LKA|NPL'
@@ -326,7 +318,6 @@ slots:
     description: 'Subject belongs to a non-westernized community.'
 
   lifestyle:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'Hunter-gatherer|Agriculturalist|Agropastoralist|Pastoralist|Fisher'
@@ -347,14 +338,12 @@ slots:
     description: 'Used for time series studies.'
 
   sequencing_platform:
-#    range: 'character'
     required: true
     multivalued: false
     pattern: 'IlluminaHiSeq|IlluminaMiSeq|IlluminaNextSeq|IlluminaNovaSeq'
     description: 'This will be modified as new sequencing platforms are added to the database.'
 
   DNA_extraction_kit:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'Qiagen|Gnome|MoBio|MPBio|NorgenBiotek|Illuminakit|Maxwell_LEV|PSP_Spin_Stool|Tiangen|PowerSoil|Chemagen|other|PowerSoilPro|ZR_Fecal_DNA_MiniPrep|KAMA_Hyper_Prep|thermo_fisher'
@@ -397,7 +386,6 @@ slots:
     description: 'Median read length - calculated from raw data.'
 
   NCBI_accession:
-#    range: 'character'
     required: false
     multivalued: true
     pattern: '[ES]R[SR][0-9]+'
@@ -453,7 +441,6 @@ slots:
     description: 'Subject has been through mumps in life.'
 
   ajcc:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: '0|i|ii|iii|iv|iii/iv'
@@ -466,7 +453,6 @@ slots:
     description: 'Fecal occult blood test.'
 
   tnm:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 't4n1m1|t3nxm1|t2n0m1|tnm|t3n3m1|t2n1m1|t4n2m1|t3n0m1|t3n2m0|t4n0m1|t4n1m0|no|t4n0m0|t3n0m0|t3n1m0|ptis|t1n0m0|t4n2m0|t3n1m1|t3n2m1|tisn0m0|t2n0m0|t1n0m1|t2n1m0|t2m0n0|t2n2m0'
@@ -480,21 +466,18 @@ slots:
     description: 'Days from the onset of the disease.'
 
   stec_count:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'high|low|moderate'
     description: 'Amount of STEC colonies detected.'
 
   shigatoxin_2_elisa:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'positive|negative'
     description: 'Enzyme-linked immunosorbent assay for Shiga-toxigenic E.coli.'
 
   stool_texture:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'smooth|watery|bloody'
@@ -521,7 +504,6 @@ slots:
     description: 'Indication about the protein intake in the Mongolians diet.'
 
   flg_genotype:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'wt|s1515x|e2422x|e2422x/3321dela'
@@ -535,7 +517,6 @@ slots:
     description: 'Years of education of the mother of the subject.'
 
   hitchip_probe_class:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'lpc|hpc'
@@ -794,35 +775,30 @@ slots:
     description: 'High-sensitivity C-reactive protein test result;curator have to use mg/L'
 
   ferm_milk_prod_consumer:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'dfmp'
     description: 'Dfmp means yes (defined milk product).'
 
   family:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: '.+'
     description: 'A number identifying the family subjects belong; not corrected for meta-analyses.'
 
   family_role:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'child|mother|father'
     description: 'Role in the family when multiple samples come from the same family but different persons.'
 
   born_method:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'c_section|vaginal'
     description: 'C-section vs vaginal birth.'
 
   c_section_type:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'Elective_CS|Emergency_CS'
@@ -849,7 +825,6 @@ slots:
     description: 'Age at which twins started to live apart (years).'
 
   feeding_practice:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'exclusively_breastfeeding|no_breastfeeding||mixed_feeding|any_breastfeeding|exclusively_formula_feeding'
@@ -877,14 +852,12 @@ slots:
     description: 'Erythrocyte sedimentation rate (ESR) in mm/H.'
 
   HLA:
-#    range: 'character'
     required: false
     multivalued: true
     pattern: '.+'
     description: 'HLA DR-DQ alleles conferring risk of Typ-1-Diabetes (T1D)'
 
   autoantibody_positive:
-#    range: 'character'
     required: false
     multivalued: true
     pattern: '.+'
@@ -905,14 +878,12 @@ slots:
     description: 'Age at which T1D was diagnosed (days).'
 
   disease_stage:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: '[A-Z]1'
     description: 'Stage information for diseases that can be divided into multiple stages.'
 
   disease_location:
-#    range: 'character'
     required: false
     multivalued: true
     pattern: '.+'
@@ -926,7 +897,6 @@ slots:
     description: 'Higher calprotectin is an indicator for inflammation in the gastrointestinal tract.'
 
   treatment:
-#    range: 'character'
     required: false
     multivalued: true
     pattern: 'no|EEN|5-ASA|aza|modulen_suppl|iron|folate|forceval|methotrexate|Lactulose|probiotic|NSAID|anthelmintics|albendazole|metformin|sitagliptin|lantus|solostar|novorapid|CTLA4|PD1|steroids|PPI|ipilumumab|nivolmab|pembrolizumab|sulphonylurea'
@@ -941,7 +911,6 @@ slots:
 
 
   anti_PD_1:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'responder|non_responder'
@@ -966,7 +935,6 @@ slots:
 
   blood_platelet:
 #    range: 'double'
-
     required:
     multivalued: false
     pattern: '[0-9]+\\.?[0-9]*'
@@ -1030,7 +998,6 @@ slots:
     description: 'Curator must use IU/ml'
 
   dental_sample_type:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'teeth|implant'
@@ -1071,14 +1038,12 @@ slots:
     description: "Depth of the pocket reached by the probe in a dental implant ('L')."
 
   zigosity:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'monozygotic|dizygotic'
     description: 'Zigosity.'
 
   menopausal_status:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'pre|going_through|post'
@@ -1127,21 +1092,18 @@ slots:
     description: 'duration time of pregnancy;curatos must use weeks'
 
   diet:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'omnivore|vegan|vegetarian'
     description: 'type of diet'
 
   subcohort:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: '[0-9a-zA-Z]\\S+'
     description: 'Identifier of a sub-set of the cohort. Can be everything.'
 
   RECIST:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: 'SD|PR|PD|CR'
@@ -1160,14 +1122,12 @@ slots:
     description: 'Progression-free survival in 12 months.'
 
   curator:
-#    range: 'character'
     required: true
     multivalued: true
     pattern: 'Paolo_Manghi|Valentina_Giunchiglia|Pamela_Ferretti|Marisa_Metzger|Giacomo_DAmato|Jacob_Wirbel|Arianna_Bonetti|Anna_Pedrotti|Francesca_DeFilippis|Aitor_Blanco_Miguez|Arianna_Bonetti;Anna_Pedrotti|Francesco_Asnicar;Paolo_Manghi|Ilya_Likhotkin;Paolo_Manghi|Aitor_Blanco_Miguez;Paolo_Manghi|Giacomo_Damato;Paolo_Manghi|Anna_Pedrotti;Paolo_Manghi|Mireia_VallesColomer'
     description: 'Curator name.'
 
   uncurated_metadata:
-#    range: 'character'
     required: false
     multivalued: false
     pattern: '.+'
