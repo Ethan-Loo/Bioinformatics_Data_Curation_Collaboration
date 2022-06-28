@@ -35,13 +35,7 @@ classes:
   Study:
     is_a: Always_Required
     attributes:
-      study_id:
-        range: Study
-        required: false
-        multivalued: true
-        inlined_as_list: true
-        pattern: '[a-zA-Z-]+_[0-9]4}|[a-zA-Z-]+_[0-9]4}[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z0-9]+'
-        description: 'Dataset name.'
+
     #class_uri: schema:Person
     slots: ## specified as a list
       - body_site
