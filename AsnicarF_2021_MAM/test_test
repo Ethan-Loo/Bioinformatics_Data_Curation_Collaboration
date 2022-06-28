@@ -1,0 +1,5 @@
+linkml-convert \
+  --output BrooksB_2017.json \
+  --target-class ContainerMAM \
+  --index-slot studiesMAM \
+  --schema AsnicarF_2021_MAM.yaml BrooksB_2017_metadata.tsv

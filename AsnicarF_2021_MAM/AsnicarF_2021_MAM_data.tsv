@@ -1,0 +1,4 @@
+sample_id	subject_id	age	gender	body_site	country	sequencing_platform	number_reads	number_bases	minimum_read_length	median_read_length	curator
+sample123	subject123	22	male	lung	NOR	IlluminaMiSeq	54321	10000000	190	199	Paolo_Manghi
+sample555	subject555	22	male	lung	NOR	IlluminaMiSeq	54321	10000000	190	199	Paolo_Manghi
+sample987	subject987	22	male	lung	NOR	IlluminaMiSeq	54321	10000000	190	199	Paolo_Manghi

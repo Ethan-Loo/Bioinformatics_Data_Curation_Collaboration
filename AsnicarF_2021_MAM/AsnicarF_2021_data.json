@@ -1,0 +1,53 @@
+{
+  "studiesMAM": [
+    {
+      "sample_id": "sample123",
+      "subject_id": "subject123",
+      "age": 22,
+      "gender": "male",
+      "body_site": "lung",
+      "country": "NOR",
+      "sequencing_platform": "IlluminaMiSeq",
+      "number_reads": 54321,
+      "number_bases": "10000000",
+      "minimum_read_length": 190,
+      "median_read_length": 199,
+      "curator": [
+        "Paolo_Manghi"
+      ]
+    },
+    {
+      "sample_id": "sample555",
+      "subject_id": "subject555",
+      "age": 22,
+      "gender": "male",
+      "body_site": "lung",
+      "country": "NOR",
+      "sequencing_platform": "IlluminaMiSeq",
+      "number_reads": 54321,
+      "number_bases": "10000000",
+      "minimum_read_length": 190,
+      "median_read_length": 199,
+      "curator": [
+        "Paolo_Manghi"
+      ]
+    },
+    {
+      "sample_id": "sample987",
+      "subject_id": "subject987",
+      "age": 22,
+      "gender": "male",
+      "body_site": "lung",
+      "country": "NOR",
+      "sequencing_platform": "IlluminaMiSeq",
+      "number_reads": 54321,
+      "number_bases": "10000000",
+      "minimum_read_length": 190,
+      "median_read_length": 199,
+      "curator": [
+        "Paolo_Manghi"
+      ]
+    }
+  ],
+  "@type": "ContainerMAM"
+}

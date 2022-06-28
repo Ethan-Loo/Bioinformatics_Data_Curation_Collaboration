@@ -1,0 +1,753 @@
+{
+  "studiesMAM": [
+    {
+      "sample_id": "SID10_B",
+      "subject_id": "SID10",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 33292394,
+      "number_bases": "3323261040",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "1",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "0",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525698"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_1",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "mixed_feeding"
+    },
+    {
+      "sample_id": "SID10_M",
+      "subject_id": "SID10_mo",
+      "age": "NA",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 46007694,
+      "number_bases": "4588492210",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "NA",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "NA",
+      "age_category": "adult",
+      "non_westernized": "no",
+      "days_from_first_collection": "NA",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525699"
+      ],
+      "pregnant": "yes",
+      "family": "BackhedF_2015_1",
+      "family_role": "mother",
+      "born_method": "NA",
+      "feeding_practice": "NA"
+    },
+    {
+      "sample_id": "SID10_4M",
+      "subject_id": "SID10",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 42937478,
+      "number_bases": "4283388200",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "110",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "109",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525693"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_1",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    },
+    {
+      "sample_id": "SID10_12M",
+      "subject_id": "SID10",
+      "age": "1",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 43463570,
+      "number_bases": "4336062840",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "380",
+      "age_category": "child",
+      "non_westernized": "no",
+      "days_from_first_collection": "379",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525688"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_1",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "no_breastfeeding"
+    },
+    {
+      "sample_id": "SID45_B",
+      "subject_id": "SID45",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 36337796,
+      "number_bases": "3628453400",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "2",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "0",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525910"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_2",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    },
+    {
+      "sample_id": "SID45_4M",
+      "subject_id": "SID45",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 43735250,
+      "number_bases": "4365636750",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "127",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "125",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525909"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_2",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    },
+    {
+      "sample_id": "SID45_12M",
+      "subject_id": "SID45",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 34750848,
+      "number_bases": "3463260190",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "363",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "361",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525908"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_2",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "any_breastfeeding"
+    },
+    {
+      "sample_id": "SID45_M",
+      "subject_id": "SID45_mo",
+      "age": "NA",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 38324782,
+      "number_bases": "3824543560",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "NA",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "NA",
+      "age_category": "adult",
+      "non_westernized": "no",
+      "days_from_first_collection": "NA",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525911"
+      ],
+      "pregnant": "yes",
+      "family": "BackhedF_2015_2",
+      "family_role": "mother",
+      "born_method": "NA",
+      "feeding_practice": "NA"
+    },
+    {
+      "sample_id": "SID53_B",
+      "subject_id": "SID53",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 26735026,
+      "number_bases": "2665203880",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "5",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "0",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525954"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_3",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    },
+    {
+      "sample_id": "SID53_4M",
+      "subject_id": "SID53",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 48951628,
+      "number_bases": "4884655220",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "yes",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "132",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "127",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525949"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_3",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "mixed_feeding"
+    },
+    {
+      "sample_id": "SID53_12M",
+      "subject_id": "SID53",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 46682740,
+      "number_bases": "4656636450",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "yes",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "363",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "358",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525944"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_3",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "no_breastfeeding"
+    },
+    {
+      "sample_id": "SID53_M",
+      "subject_id": "SID53_mo",
+      "age": "NA",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 37975908,
+      "number_bases": "3790107880",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "NA",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "NA",
+      "age_category": "adult",
+      "non_westernized": "no",
+      "days_from_first_collection": "NA",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525955"
+      ],
+      "pregnant": "yes",
+      "family": "BackhedF_2015_3",
+      "family_role": "mother",
+      "born_method": "NA",
+      "feeding_practice": "NA"
+    },
+    {
+      "sample_id": "SID82_B",
+      "subject_id": "SID82",
+      "age": "0",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 32997962,
+      "number_bases": "3294141700",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "6",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "0",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR526078"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_4",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "mixed_feeding"
+    },
+    {
+      "sample_id": "SID82_4M",
+      "subject_id": "SID82",
+      "age": "0",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 34813062,
+      "number_bases": "3473989180",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "128",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "122",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR526077"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_4",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_formula_feeding"
+    },
+    {
+      "sample_id": "SID82_12M",
+      "subject_id": "SID82",
+      "age": "1",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 42010068,
+      "number_bases": "4192256250",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "369",
+      "age_category": "child",
+      "non_westernized": "no",
+      "days_from_first_collection": "363",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR526076"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_4",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "no_breastfeeding"
+    },
+    {
+      "sample_id": "SID82_M",
+      "subject_id": "SID82_mo",
+      "age": "NA",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 42256028,
+      "number_bases": "4214969270",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "NA",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "NA",
+      "age_category": "adult",
+      "non_westernized": "no",
+      "days_from_first_collection": "NA",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR526079"
+      ],
+      "pregnant": "yes",
+      "family": "BackhedF_2015_4",
+      "family_role": "mother",
+      "born_method": "NA",
+      "feeding_practice": "NA"
+    },
+    {
+      "sample_id": "SID137_B",
+      "subject_id": "SID137",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 38277746,
+      "number_bases": "3819951970",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "1",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "0",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525719"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_5",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    },
+    {
+      "sample_id": "SID137_4M",
+      "subject_id": "SID137",
+      "age": "0",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 40643948,
+      "number_bases": "4048295820",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "134",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "133",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525718"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_5",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    },
+    {
+      "sample_id": "SID137_12M",
+      "subject_id": "SID137",
+      "age": "1",
+      "gender": "male",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 46858036,
+      "number_bases": "4676004350",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "366",
+      "age_category": "child",
+      "non_westernized": "no",
+      "days_from_first_collection": "365",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525717"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_5",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "no_breastfeeding"
+    },
+    {
+      "sample_id": "SID137_M",
+      "subject_id": "SID137_mo",
+      "age": "NA",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 37956792,
+      "number_bases": "3784076250",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "NA",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "NA",
+      "age_category": "adult",
+      "non_westernized": "no",
+      "days_from_first_collection": "NA",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525720"
+      ],
+      "pregnant": "yes",
+      "family": "BackhedF_2015_5",
+      "family_role": "mother",
+      "born_method": "NA",
+      "feeding_practice": "NA"
+    },
+    {
+      "sample_id": "SID332_B",
+      "subject_id": "SID332",
+      "age": "0",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 35331064,
+      "number_bases": "3526254740",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "12",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "0",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525846"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_6",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    },
+    {
+      "sample_id": "SID332_4M",
+      "subject_id": "SID332",
+      "age": "0",
+      "gender": "female",
+      "body_site": "stool",
+      "country": "SWE",
+      "sequencing_platform": "IlluminaHiSeq",
+      "number_reads": 45421814,
+      "number_bases": "4531282730",
+      "minimum_read_length": 80,
+      "median_read_length": 100,
+      "curator": [
+        "Valentina_Giunchiglia"
+      ],
+      "antibiotics_current_use": "no",
+      "study_condition": "control",
+      "disease": [
+        "healthy"
+      ],
+      "infant_age": "125",
+      "age_category": "newborn",
+      "non_westernized": "no",
+      "days_from_first_collection": "113",
+      "PMID": 25974306,
+      "NCBI_accession": [
+        "ERR525845"
+      ],
+      "pregnant": "no",
+      "family": "BackhedF_2015_6",
+      "family_role": "child",
+      "born_method": "vaginal",
+      "feeding_practice": "exclusively_breastfeeding"
+    }
+  ],
+  "@type": "ContainerMAM"
+}

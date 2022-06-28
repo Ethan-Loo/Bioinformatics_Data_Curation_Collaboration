@@ -1,5 +1,7 @@
+---
 AsnicarF_2021:
-- sample_id: SAMEA7041133
+- study_name: Asnicar_2021
+  sample_id: SAMEA7041133
   subject_id: predict1_MTG_0001
   body_site: stool
   antibiotics_current_use: 'no'
@@ -21,7 +23,8 @@ AsnicarF_2021:
   median_read_length: 151
   NCBI_accession: ERR4330026
   curator: Francesco_Asnicar;Paolo_Manghi
-- sample_id: SAMEA7041134
+- study_name: Asnicar_2021
+  sample_id: SAMEA7041134
   subject_id: predict1_MTG_0002
   body_site: stool
   antibiotics_current_use: 'no'

@@ -1,0 +1,6 @@
+poetry run linkml-convert \
+  --output AsnicarF_2021_data.json \
+  --target-class ContainerMAM \
+  --index-slot studiesMAM \
+  --schema AsnicarF_2021_MAM.yaml AsnicarF_2021_MAM_data.tsv
+
