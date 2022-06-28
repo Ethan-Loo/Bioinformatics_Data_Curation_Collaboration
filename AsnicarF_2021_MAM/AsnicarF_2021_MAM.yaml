@@ -195,20 +195,20 @@ slots:
   study_name:
     required: false
     multivalued: false
-    pattern: '[a-zA-Z-]+_[0-9]4}|[a-zA-Z-]+_[0-9]4}[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z0-9]+'
+    pattern: 'NA | [a-zA-Z-]+_[0-9]4}|[a-zA-Z-]+_[0-9]4}[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z-]+|[a-zA-Z-]+_[0-9]4}_[a-zA-Z0-9]+'
     description: 'Dataset name.'
 
   sample_id:
     range: 'string'
     required: true
     multivalued: false
-    pattern: '[0-9a-zA-Z_]'
+    pattern: 'NA | [0-9a-zA-Z_]'
     description: 'Sample identifier.'
 
   subject_id:
     required: true
     multivalued: false
-    pattern: '[0-9a-zA-Z_]'
+    pattern: 'NA | [0-9a-zA-Z_]'
     description: 'Subject identifier.'
 
   body_site:
@@ -225,7 +225,7 @@ slots:
 
   antibiotics_current_use:
 #    range: YesNo
-    pattern: 'yes|no|NA'
+    pattern: 'NA | yes|no|NA'
     required: false
     multivalued: false
     description: 'Subject is currently taking antibiotics.'
@@ -233,42 +233,44 @@ slots:
   antibiotics_family:
     required: false
     multivalued: true
-    pattern: 'dopamine_antagonists|phenylpiperidines|thienobenzodiazepines|blood_pressure_medication|diabetes_oral_medication|anti_retrovirals|beta_blockers|reverse_transcriptase_inhibitors|anti_virals|cephalosporins|penicillins|macrolides|beta_lactamase_inhibitors|nitrofurans|sulphonamides|aminoglycosides|carbapenems|fluoroquinolones|laxatives|none'
+    pattern: 'NA | dopamine_antagonists|phenylpiperidines|thienobenzodiazepines|blood_pressure_medication|diabetes_oral_medication|anti_retrovirals|beta_blockers|reverse_transcriptase_inhibitors|anti_virals|cephalosporins|penicillins|macrolides|beta_lactamase_inhibitors|nitrofurans|sulphonamides|aminoglycosides|carbapenems|fluoroquinolones|laxatives|none'
     description: 'Family of antibiotics currently used; Semicolon-separated.'
 
   study_condition:
     #    range: #See disease_ontology.yaml
     required: false
     multivalued: false
-    pattern: 'ACVD|generic_diabetes|acute_diarrhoea|carcinoma_surgery_history|cellulitis|melanoma|mucositis|gangrene|osteoarthritis|control|NK|peri-implantitis|pyelonefritis|salmonellosis|sepsis|skininf|suspinf|arthritis|STEC|CRC|adenoma|fatty_liver|hypertension|pre-hypertension|coeliac|asthma|gestational_diabetes|cirrhosis|CMV|CDI|IBD|T2D|T1D|AD|AR|IGT|ME/CFS|premature_born|schizofrenia|ascites|wilson|otitis|bronchitis|pneumonia|respiratoryinf|cough|stomatitis|fever|pyelonephritis|infectiousgastroenteritis|tonsillitis|cystitis|abdominalhernia|psoriasis|cephalosporins|AS|RA|metabolic_syndrome|FMT|premature_born|periodontitis|SRP|STH|BD|chorioamnionitis|pre-eclampsia|carcinoma_surgery_history|peri-implantitis|mucositis|migraine|asthma'
+    pattern: 'NA | ACVD|generic_diabetes|acute_diarrhoea|carcinoma_surgery_history|cellulitis|melanoma|mucositis|gangrene|osteoarthritis|control|NK|peri-implantitis|pyelonefritis|salmonellosis|sepsis|skininf|suspinf|arthritis|STEC|CRC|adenoma|fatty_liver|hypertension|pre-hypertension|coeliac|asthma|gestational_diabetes|cirrhosis|CMV|CDI|IBD|T2D|T1D|AD|AR|IGT|ME/CFS|premature_born|schizofrenia|ascites|wilson|otitis|bronchitis|pneumonia|respiratoryinf|cough|stomatitis|fever|pyelonephritis|infectiousgastroenteritis|tonsillitis|cystitis|abdominalhernia|psoriasis|cephalosporins|AS|RA|metabolic_syndrome|FMT|premature_born|periodontitis|SRP|STH|BD|chorioamnionitis|pre-eclampsia|carcinoma_surgery_history|peri-implantitis|mucositis|migraine|asthma'
     description: 'The main disease or condition under study; control for controls;STEC=Shiga-toxigenic E.coli;CDI=Clostridium difficile infection;IBD=Inflammatory bowel disease;T2D= Type-2 diabetes;T1D=Type-1 diabetes;AD=Atopic dermatitis;AR=Allergic rhinitis;IGT=Impaired glucose tolerance;AS=Ankylosing spondylitis;RA=rheumatic arthritis;FMT=fecal microbiota transplantaion;SRP=Scaling and root planing;CMV=Cytomegalovirus;HBV_HDV_HEV= Hepatitis viruses;BD= Bechet-disease;ACVD= Artheriosclerotic Cardiovalscular Disease'
 
   disease:
     #    range: #See disease_ontology.yaml
     required: false
     multivalued: true
-    pattern: 'healthy|generic_diabetes|acute_diarrhoea|carcinoma_surgery_history|chorioamnionitis|hepatitis|ACVD|NK|CRC|STEC|melanoma|adenoma|arthritis|cellulitis|gangrene|few_polyps|osteoarthritis|pyelonefritis|pre-eclampsia|salmonellosis|sepsis|skininf|suspinf|fatty_liver|hypertension|coeliac|asthma|gestational_diabetes|cirrhosis|hepatitis|CMV|CDI|IBD|T2D|T1D|AD|AR|IGT|BD|ME/CFS|premature_born|schizofrenia|ascites|wilson|otitis|bronchitis|pneumonia|respiratoryinf|cough|stomatitis|fever|pyelonephritis|infectiousgastroenteritis|tonsillitis|cystitis|abdominalhernia|psoriasis|RA|metabolic_syndrome|metastases|hypercholesterolemia|periodontitis|chorioamnionitis|pre-eclampsia|peri-implantitis|mucositis|STH|migraine|asthma'
+    pattern: 'NA | healthy|generic_diabetes|acute_diarrhoea|carcinoma_surgery_history|chorioamnionitis|hepatitis|ACVD|NK|CRC|STEC|melanoma|adenoma|arthritis|cellulitis|gangrene|few_polyps|osteoarthritis|pyelonefritis|pre-eclampsia|salmonellosis|sepsis|skininf|suspinf|fatty_liver|hypertension|coeliac|asthma|gestational_diabetes|cirrhosis|hepatitis|CMV|CDI|IBD|T2D|T1D|AD|AR|IGT|BD|ME/CFS|premature_born|schizofrenia|ascites|wilson|otitis|bronchitis|pneumonia|respiratoryinf|cough|stomatitis|fever|pyelonephritis|infectiousgastroenteritis|tonsillitis|cystitis|abdominalhernia|psoriasis|RA|metabolic_syndrome|metastases|hypercholesterolemia|periodontitis|chorioamnionitis|pre-eclampsia|peri-implantitis|mucositis|STH|migraine|asthma'
     description: "Semicolon-delimited vector of conditions; Use healthy only if subject is known to be healthy; CRC=colorectal cancer;CD=Crohn's disease; for other abbreviations see study_condition"
 
   disease_subtype:
     #    range:  #See disease_ontology.yaml
     required: false
     multivalued: true
-    pattern: 'healthy|CD|UC|HBV|HDV|HEV|cirrhosis|adenoma|smalladenoma|largeadenoma|advancedadenoma|adenocarcinoma|carcinoma|AS|cholera|T1D_nonconverter|T1D_seroconverter|NAFLD|Ulcerative_colitis|undetermined_colitis|ascaris_lumbricoides|necator_americanus|trichuris_trichiura|hookworm|microfilaria_spp|plasmodium_falciparum|microfilaria_loa_loa|entamoeba_histolytica|mansonella_perstans|first_episode_schizofrenia|repeated_episodes_shizofrenia'
+    pattern: 'NA | healthy|CD|UC|HBV|HDV|HEV|cirrhosis|adenoma|smalladenoma|largeadenoma|advancedadenoma|adenocarcinoma|carcinoma|AS|cholera|T1D_nonconverter|T1D_seroconverter|NAFLD|Ulcerative_colitis|undetermined_colitis|ascaris_lumbricoides|necator_americanus|trichuris_trichiura|hookworm|microfilaria_spp|plasmodium_falciparum|microfilaria_loa_loa|entamoeba_histolytica|mansonella_perstans|first_episode_schizofrenia|repeated_episodes_shizofrenia'
     description: "Disease subtype; CD=Chrohn's Disease;AS=Ankylosing spondylitis;NAFLD=nonalcoholic fatty liver disease;for other abbreviations see study_condition"
 
   age:
-#    range: 'integer'
+    range:
+      - integer
+      - string
     required: false
     multivalued: false
-    pattern: '[0-9]+|NA'
+    pattern: 'NA | [0-9]+'
     description: 'Subject age (years).'
 
   infant_age:
 #    range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+|NA'
+    pattern: 'NA | [0-9]+|NA'
     description: 'Infant age (days); should be used for infants < 2 years old.'
 
   age_category:
@@ -287,38 +289,38 @@ slots:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Visit number for studies with repeated visits.'
 
   BMI:
     range: 'float'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Body mass index (kg/m2).'
 
   country:
     required: true
     multivalued: false
-    pattern: 'LBR|SLV|CAN|DNK|EST|FJI|FIN|FRA|DEU|ITA|MNG|NLD|NOR|JPN|ESP|KOR|BRA|IRL|PHL|SWE|USA|GBR|CHN|RUS|LUX|AUT|TZA|PER|MDG|ISL|BRN|IDN|MYS|HUN|SVK|SGP|ISR|BGD|KAZ|IND|GHA|ETH|JPN|CMR'
+    pattern: 'NA | LBR|SLV|CAN|DNK|EST|FJI|FIN|FRA|DEU|ITA|MNG|NLD|NOR|JPN|ESP|KOR|BRA|IRL|PHL|SWE|USA|GBR|CHN|RUS|LUX|AUT|TZA|PER|MDG|ISL|BRN|IDN|MYS|HUN|SVK|SGP|ISR|BGD|KAZ|IND|GHA|ETH|JPN|CMR'
     description: 'Country of acquisition using ISO3 code from http://www.fao.org/countryprofiles/iso3list/en/.'
 
   location:
     required: false
     multivalued: false
-    pattern: '.+'
+    pattern: 'NA | .+'
     description: 'Free-form additional location information.'
 
   population:
     required: false
     multivalued: false
-    pattern: '[a-zA-Z]\\S+'
+    pattern: 'NA | [a-zA-Z]\\S+'
     description: 'can describe the belonging to a specific population'
 
   travel_destination:
     required: false
     multivalued: false
-    pattern: 'CMR|ETH|KEN|TZA|RWA|IND|LKA|NPL'
+    pattern: 'NA | CMR|ETH|KEN|TZA|RWA|IND|LKA|NPL'
     description: 'travel destination using ISO3 code from http://www.fao.org/countryprofiles/iso3list/en/.'
 
   non_westernized:
@@ -330,47 +332,47 @@ slots:
   lifestyle:
     required: false
     multivalued: false
-    pattern: 'Hunter-gatherer|Agriculturalist|Agropastoralist|Pastoralist|Fisher'
+    pattern: 'NA | Hunter-gatherer|Agriculturalist|Agropastoralist|Pastoralist|Fisher'
     description: 'to describe the lifestyle of non-westernized people'
 
   brinkman_index:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'The Brinkman index if provided'
 
   days_from_first_collection:
 #    range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+|NA'
+    pattern: 'NA | [0-9]+|NA'
     description: 'Used for time series studies.'
 
   sequencing_platform:
     required: true
     multivalued: false
-    pattern: 'IlluminaHiSeq|IlluminaMiSeq|IlluminaNextSeq|IlluminaNovaSeq'
+    pattern: 'NA | IlluminaHiSeq|IlluminaMiSeq|IlluminaNextSeq|IlluminaNovaSeq'
     description: 'This will be modified as new sequencing platforms are added to the database.'
 
   DNA_extraction_kit:
     required: false
     multivalued: false
-    pattern: 'Qiagen|Gnome|MoBio|MPBio|NorgenBiotek|Illuminakit|Maxwell_LEV|PSP_Spin_Stool|Tiangen|PowerSoil|Chemagen|other|PowerSoilPro|ZR_Fecal_DNA_MiniPrep|KAMA_Hyper_Prep|thermo_fisher'
+    pattern: 'NA | Qiagen|Gnome|MoBio|MPBio|NorgenBiotek|Illuminakit|Maxwell_LEV|PSP_Spin_Stool|Tiangen|PowerSoil|Chemagen|other|PowerSoilPro|ZR_Fecal_DNA_MiniPrep|KAMA_Hyper_Prep|thermo_fisher'
     description: 'DNA extraction kit.'
 
   PMID:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '{[0-9]8}'
+    pattern: 'NA | {[0-9]8}'
     description: 'Identifier of the main publication in PubMed.'
 
   number_reads:
     range: 'integer'
     required: true
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Number of final reads - calculated from raw data.'
 
 
@@ -378,27 +380,27 @@ slots:
     #    range: 'double'
     required: true
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Total number of bases sequenced in the sample - calculated from raw data.'
 
   minimum_read_length:
     range: 'integer'
     required: true
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Minimum read length - calculated from raw data.'
 
   median_read_length:
     range: 'integer'
     required: true
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Median read length - calculated from raw data.'
 
   NCBI_accession:
     required: false
     multivalued: true
-    pattern: '[ES]R[SR][0-9]+'
+    pattern: 'NA | [ES]R[SR][0-9]+'
     description: 'Semicolon-separated vector of NCBI accessions.'
 
   pregnant:
@@ -441,7 +443,7 @@ slots:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Alcohol consumption reported as a float.'
 
   mumps:
@@ -453,7 +455,7 @@ slots:
   ajcc:
     required: false
     multivalued: false
-    pattern: '0|i|ii|iii|iv|iii/iv'
+    pattern: 'NA | 0|i|ii|iii|iv|iii/iv'
     description: 'AJCC staging for colorectal-cancer.'
 
   fobt:
@@ -465,32 +467,32 @@ slots:
   tnm:
     required: false
     multivalued: false
-    pattern: 't4n1m1|t3nxm1|t2n0m1|tnm|t3n3m1|t2n1m1|t4n2m1|t3n0m1|t3n2m0|t4n0m1|t4n1m0|no|t4n0m0|t3n0m0|t3n1m0|ptis|t1n0m0|t4n2m0|t3n1m1|t3n2m1|tisn0m0|t2n0m0|t1n0m1|t2n1m0|t2m0n0|t2n2m0'
+    pattern: 'NA | t4n1m1|t3nxm1|t2n0m1|tnm|t3n3m1|t2n1m1|t4n2m1|t3n0m1|t3n2m0|t4n0m1|t4n1m0|no|t4n0m0|t3n0m0|t3n1m0|ptis|t1n0m0|t4n2m0|t3n1m1|t3n2m1|tisn0m0|t2n0m0|t1n0m1|t2n1m0|t2m0n0|t2n2m0'
     description: 'TNM classification for colorectal-cancer.'
 
   days_after_onset:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Days from the onset of the disease.'
 
   stec_count:
     required: false
     multivalued: false
-    pattern: 'high|low|moderate'
+    pattern: 'NA | high|low|moderate'
     description: 'Amount of STEC colonies detected.'
 
   shigatoxin_2_elisa:
     required: false
     multivalued: false
-    pattern: 'positive|negative'
+    pattern: 'NA | positive|negative'
     description: 'Enzyme-linked immunosorbent assay for Shiga-toxigenic E.coli.'
 
   stool_texture:
     required: false
     multivalued: false
-    pattern: 'smooth|watery|bloody'
+    pattern: 'NA | smooth|watery|bloody'
     description: 'Texture of the stool at sampling time.'
 
   insulin_cat:
@@ -503,315 +505,315 @@ slots:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'International normalized ratio.'
 
   protein_intake:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Indication about the protein intake in the Mongolians diet.'
 
   flg_genotype:
     required: false
     multivalued: false
-    pattern: 'wt|s1515x|e2422x|e2422x/3321dela'
+    pattern: 'NA | wt|s1515x|e2422x|e2422x/3321dela'
     description: 'Any term for filaggrin-protein genotype.'
 
   momeducat:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Years of education of the mother of the subject.'
 
   hitchip_probe_class:
     required: false
     multivalued: false
-    pattern: 'lpc|hpc'
+    pattern: 'NA | lpc|hpc'
     description: 'High/Low species content onthe HIT-chip probe.'
 
   hitchip_probe_number:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'HIT-chip probe score.'
 
   mgs_richness:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Metagenomic species richness.'
 
   hla_drb12:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Hla_drb12 allele.'
 
   hla_dqa12:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Hla_dqa12 allele.'
 
   hla_dqa11:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Hla_dqa11 allele.'
 
   hla_drb11:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Hla_drb11 allele.'
 
   hla_dbq12:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Hla_dbq12 allele.'
 
   hla_dbq11:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Hla_dbq11 allele.'
 
   ctp:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Cytidine triphosphate level.'
 
   start_solidfood:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'First day of solid food introduction (newborns).'
 
   triglycerides:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   cholesterol:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   hdl:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   ldl:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   ALT:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'The Alanine aminotransferase test. STD. results of the test are allowed.'
 
   eGFR:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'The Estimated Glomerular Filtration Rate. STD. estimate of the test allowed.'
 
   adiponectin:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/l.'
 
   fasting_insulin:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use micro-units/ml.'
 
   hba1c:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use %.'
 
   c_peptide:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use ng/ml.'
 
   glp_1:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use pmol/l.'
 
   cd163:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use ng/ml.'
 
   il_1:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use pg/ml.'
 
   leptin:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use micrograms/l.'
 
   glucose:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   fasting_glucose:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   fgf_19:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use pg/ml.'
 
   glutamate_decarboxylase_2_antibody:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Glutamic acid decarboxylase (GAD65) antibody assay.'
 
   creatinine:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use micro-mol/l.'
 
   creatine:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use micro-mol/l.'
 
   albumine:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Albumine level; curators must use g/l.'
 
   bilubirin:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Bilubirin; curators must use mg/dl.'
 
   prothrombin_time:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Prothrombin time in seconds.'
 
   dyastolic_p:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Measured in mm/Hg.'
 
   systolic_p:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Measured in mm/Hg.'
 
   hscrp:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'High-sensitivity C-reactive protein test result;curator have to use mg/L'
 
   ferm_milk_prod_consumer:
     required: false
     multivalued: false
-    pattern: 'dfmp'
+    pattern: 'NA | dfmp'
     description: 'Dfmp means yes (defined milk product).'
 
   family:
     required: false
     multivalued: false
-    pattern: '.+'
+    pattern: 'NA | .+'
     description: 'A number identifying the family subjects belong; not corrected for meta-analyses.'
 
   family_role:
     required: false
     multivalued: false
-    pattern: 'child|mother|father'
+    pattern: 'NA | child|mother|father'
     description: 'Role in the family when multiple samples come from the same family but different persons.'
 
   born_method:
     required: false
     multivalued: false
-    pattern: 'c_section|vaginal|NA'
+    pattern: 'NA | c_section|vaginal|NA'
     description: 'C-section vs vaginal birth.'
 
   c_section_type:
     required: false
     multivalued: false
-    pattern: 'Elective_CS|Emergency_CS'
+    pattern: 'NA | Elective_CS|Emergency_CS'
     description: 'C-section main decision reason.'
 
   premature:
@@ -824,92 +826,92 @@ slots:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Can be used for multiple birth.'
 
   age_twins_started_to_live_apart:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'Age at which twins started to live apart (years).'
 
   feeding_practice:
     required: false
     multivalued: false
-    pattern: 'exclusively_breastfeeding|no_breastfeeding||mixed_feeding|any_breastfeeding|exclusively_formula_feeding'
+    pattern: 'NA | exclusively_breastfeeding|no_breastfeeding||mixed_feeding|any_breastfeeding|exclusively_formula_feeding'
     description: 'Feeding practice.'
 
   breastfeeding_duration:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'curator must use days'
 
   formula_first_day:
     range: 'integer'
     required: false
     multivalued: false
-    pattern: '[0-9]+'
+    pattern: 'NA | [0-9]+'
     description: 'the age infants get the first formula feeding in days'
 
   ESR:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Erythrocyte sedimentation rate (ESR) in mm/H.'
 
   HLA:
     required: false
     multivalued: true
-    pattern: '.+'
+    pattern: 'NA | .+'
     description: 'HLA DR-DQ alleles conferring risk of Typ-1-Diabetes (T1D)'
 
   autoantibody_positive:
     required: false
     multivalued: true
-    pattern: '.+'
+    pattern: 'NA | .+'
     description: 'Tested positive for AAB.'
 
   age_seroconversion:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Age at seroconvention was detected (days).'
 
   age_T1D_diagnosis:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Age at which T1D was diagnosed (days).'
 
   disease_stage:
     required: false
     multivalued: false
-    pattern: '[A-Z]1'
+    pattern: 'NA | [A-Z]1'
     description: 'Stage information for diseases that can be divided into multiple stages.'
 
   disease_location:
     required: false
     multivalued: true
-    pattern: '.+'
+    pattern: 'NA | .+'
     description: 'Can be used for diseases which occur on different body parts like CD.'
 
   calprotectin:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Higher calprotectin is an indicator for inflammation in the gastrointestinal tract.'
 
   treatment:
     required: false
     multivalued: true
-    pattern: 'no|EEN|5-ASA|aza|modulen_suppl|iron|folate|forceval|methotrexate|Lactulose|probiotic|NSAID|anthelmintics|albendazole|metformin|sitagliptin|lantus|solostar|novorapid|CTLA4|PD1|steroids|PPI|ipilumumab|nivolmab|pembrolizumab|sulphonylurea'
+    pattern: 'NA | no|EEN|5-ASA|aza|modulen_suppl|iron|folate|forceval|methotrexate|Lactulose|probiotic|NSAID|anthelmintics|albendazole|metformin|sitagliptin|lantus|solostar|novorapid|CTLA4|PD1|steroids|PPI|ipilumumab|nivolmab|pembrolizumab|sulphonylurea'
     description: 'medications or treatments against the diseases.'
 
 
@@ -923,7 +925,7 @@ slots:
   anti_PD_1:
     required: false
     multivalued: false
-    pattern: 'responder|non_responder'
+    pattern: 'NA | responder|non_responder'
     description: 'The patient results to be a responder/non-responder to the anti-PD1 treatment.'
 
 
@@ -931,7 +933,7 @@ slots:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'White blood cells count; curators must use *1000counts/µL'
 
 
@@ -939,7 +941,7 @@ slots:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Red blood cells count; curators must use *million_counts/µL'
 
 
@@ -947,7 +949,7 @@ slots:
     #    range: 'double'
     required:
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curators must use *1000counts/µl'
 
 
@@ -955,62 +957,62 @@ slots:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Hemoglobin concentration in blood; curators must use g/dl'
 
   ast:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Aspartate transaminase; curator must use U/l'
 
   alt:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Alanine aminotransferase; curator must use U/l'
 
   globulin:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curator must use g/l'
 
   urea_nitrogen:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curator must use mmol/l'
 
   ASO:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Antistreptolysin O; curator must use IU/ml'
 
   anti_ccp_antibody:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curator must use U/ml'
 
   rheumatoid_factor:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Curator must use IU/ml'
 
   dental_sample_type:
     required: false
     multivalued: false
-    pattern: 'teeth|implant'
+    pattern: 'NA | teeth|implant'
     description: 'Dental sample type.'
 
   history_of_periodontitis:
@@ -1023,100 +1025,100 @@ slots:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('M')."
 
   PPD_B:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('B')."
 
   PPD_D:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('D')."
 
   PPD_L:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('L')."
 
   zigosity:
     required: false
     multivalued: false
-    pattern: 'monozygotic|dizygotic'
+    pattern: 'NA | monozygotic|dizygotic'
     description: 'Zigosity.'
 
   menopausal_status:
     required: false
     multivalued: false
-    pattern: 'pre|going_through|post'
+    pattern: 'NA | pre|going_through|post'
     description: 'Menopausal status.'
 
   BASDAI:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Bath Ankylosing Spondylitis Disease Activity Index'
 
   BASFI:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Bath Ankylosing Spondylitis Functional Index'
 
   HBI:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'Harvey-Bradshaw Index clinical indication of active disease and inflammation'
 
   SCCAI:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'simple clinical colitis activity index'
 
   birth_weight:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'curators must use gramms'
 
   gestational_age:
     #    range: 'double'
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
+    pattern: 'NA | [0-9]+\\.?[0-9]*'
     description: 'duration time of pregnancy;curatos must use weeks'
 
   diet:
     required: false
     multivalued: false
-    pattern: 'omnivore|vegan|vegetarian'
+    pattern: 'NA | omnivore|vegan|vegetarian'
     description: 'type of diet'
 
   subcohort:
     required: false
     multivalued: false
-    pattern: '[0-9a-zA-Z]\\S+'
+    pattern: 'NA | [0-9a-zA-Z]\\S+'
     description: 'Identifier of a sub-set of the cohort. Can be everything.'
 
   RECIST:
     required: false
     multivalued: false
-    pattern: 'SD|PR|PD|CR'
+    pattern: 'NA | SD|PR|PD|CR'
     description: 'RECIST classification for response to cancer-therapy: SD=Stable Disease; PR=Partial Response; PD=Progression Disease; CR=Complete Response'
 
   ORR:
@@ -1134,13 +1136,13 @@ slots:
   curator:
     required: true
     multivalued: true
-    pattern: 'Paolo_Manghi|Valentina_Giunchiglia|Pamela_Ferretti|Marisa_Metzger|Giacomo_DAmato|Jacob_Wirbel|Arianna_Bonetti|Anna_Pedrotti|Francesca_DeFilippis|Aitor_Blanco_Miguez|Arianna_Bonetti;Anna_Pedrotti|Francesco_Asnicar;Paolo_Manghi|Ilya_Likhotkin;Paolo_Manghi|Aitor_Blanco_Miguez;Paolo_Manghi|Giacomo_Damato;Paolo_Manghi|Anna_Pedrotti;Paolo_Manghi|Mireia_VallesColomer'
+    pattern: 'NA | Paolo_Manghi|Valentina_Giunchiglia|Pamela_Ferretti|Marisa_Metzger|Giacomo_DAmato|Jacob_Wirbel|Arianna_Bonetti|Anna_Pedrotti|Francesca_DeFilippis|Aitor_Blanco_Miguez|Arianna_Bonetti;Anna_Pedrotti|Francesco_Asnicar;Paolo_Manghi|Ilya_Likhotkin;Paolo_Manghi|Aitor_Blanco_Miguez;Paolo_Manghi|Giacomo_Damato;Paolo_Manghi|Anna_Pedrotti;Paolo_Manghi|Mireia_VallesColomer'
     description: 'Curator name.'
 
   uncurated_metadata:
     required: false
     multivalued: false
-    pattern: '.+'
+    pattern: 'NA | .+'
     description: 'A row for whatever field has not be included here.'
 
 
@@ -1162,6 +1164,7 @@ enums:
       male:
       female:
       other:
+      NA:
   Body_Site:
     permissible_values:
       stool:
