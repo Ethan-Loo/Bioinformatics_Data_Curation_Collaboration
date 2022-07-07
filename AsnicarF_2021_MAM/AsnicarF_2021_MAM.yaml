@@ -163,7 +163,10 @@ id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
           - curator
           - uncurated_metadata
           - change_in_tumor_size
+          - performance_status
           - project_name
+          - previous_therapy
+          - toxicity_above_zero
           - studies
     
       # *_metadata.tsv:
@@ -1331,7 +1334,31 @@ id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
         required: false
         multivalued: false
         description: ''
-   
+
+      performance_status:
+        any_of:
+          - range: NA_enum
+          - range: float
+        required: false
+        multivalued: false
+        description: ''
+
+      previous_therapy:
+        any_of:
+          - range: NA_enum
+          - range: YesNo
+        required: false
+        multivalued: false
+        description: ''
+
+      toxicity_above_zero:
+        any_of:
+          - range: NA_enum
+          - range: YesNo
+        required: false
+        multivalued: false
+        description: ''
+
       curator:
         range: Curator
         required: true
