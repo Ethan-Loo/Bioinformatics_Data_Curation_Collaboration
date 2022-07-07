@@ -1,0 +1,40 @@
+12:12:13 From Sean Davis (he/him) to Everyone:
+	https://linkml.io/linkml/faq/modeling.html?highlight=ontology#how-do-i-constrain-a-range-to-a-certain-ontology
+12:22:20 From Levi Waldron to Everyone:
+	pattern: '^UBERON:\d+$'
+12:27:01 From Levi Waldron to Everyone:
+	GH handle @lwaldron
+12:27:04 From Arielle Moll to Everyone:
+	https://github.com/Ethan-Loo/Bioinformatics_Data_Curation_Collaboration
+12:27:15 From Arielle Moll to Everyone:
+	https://github.com/Ethan-Loo/Bioinformatics_Data_Curation_Collaboration/blob/main/disease_ontology.yaml
+12:27:31 From Arielle Moll to Everyone:
+	ontology's to review
+12:30:34 From paolo manghi to Everyone:
+	https://github.com/waldronlab/curatedMetagenomicDataCuration/blob/master/inst/curated/GhensiP_2019/GhensiP_2019_metadata.tsv
+12:33:10 From Sean Davis (he/him) to Everyone:
+	+100 to not anger folks!
+12:34:38 From Levi Waldron to Everyone:
+	body_subsite -> host_anatomy
+12:35:54 From Levi Waldron to Everyone:
+	disease -> condition
+12:36:15 From paolo manghi to Everyone:
+	study_condition -> main clinical condition
+12:37:01 From Levi Waldron to Everyone:
+	study_condition -> condition_under_study
+12:37:26 From Levi Waldron to Everyone:
+	study_condition -> study_condition_ontology
+12:37:52 From Levi Waldron to Everyone:
+	disease -> condition_ontology
+12:38:15 From Levi Waldron to Everyone:
+	body_subsite -> host_anatomy_ontology
+12:40:31 From Levi Waldron to Everyone:
+	country -> country_ontology
+12:42:21 From Levi Waldron to Everyone:
+	antibiotics_family -> drug_ontology
+12:42:38 From Levi Waldron to Everyone:
+	age_category -> age_category_ontology
+12:44:20 From Levi Waldron to Everyone:
+	disease_subtype -> condition_ontology (maybe disease is not even needed any more)
+12:44:44 From Sean Davis (he/him) to Everyone:
+	Yep! This is super cool
