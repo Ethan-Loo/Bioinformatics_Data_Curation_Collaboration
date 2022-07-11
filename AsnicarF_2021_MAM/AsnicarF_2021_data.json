@@ -1,5 +1,6 @@
-{Yurd
-  "studiesMAM": [
+{
+  "project_name": "curated_test" ,
+  "studies": [
     {
       "sample_id": "sample123",
       "subject_id": "subject123",
@@ -48,6 +49,5 @@
         "Paolo_Manghi"
       ]
     }
-  ],
-  "@type": "ContainerMAM"
+  ]
 }

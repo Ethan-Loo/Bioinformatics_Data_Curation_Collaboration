@@ -14,6 +14,7 @@ default_range: string
 
 classes:
   Project:
+    tree_root: true
     slots:
       - project_name
       - studies
