@@ -1,4 +1,3 @@
-
 id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
 prefixes:
   linkml: https://w3id.org/linkml/
@@ -8,11 +7,11 @@ prefixes:
     
     #  personinfo: https://w3id.org/linkml/examples/personinfo/
     #  ORCID: https://orcid.org/
-    #  PATO: http://purl.obolibrary.org/obo/PATO_
+  #  PATO: http://purl.obolibrary.org/obo/PATO_
 imports:
   - linkml:types
 default_range: string
-    
+
 classes:
   Project:
     slots:
@@ -167,7 +166,7 @@ classes:
       - previous_therapy
       - toxicity_above_zero
       - studies
-    
+
       # *_metadata.tsv:
     
     # slots are first-class entities in the metamodel
@@ -179,12 +178,12 @@ slots:
   samples:
     multivalued: true
     inlined_as_list: true
-#        range: Sample
+  #        range: Sample
 
   studies:
     multivalued: true
     inlined_as_list: true
-#        range: Study
+  #        range: Study
 
   study_name:
     range: string
@@ -247,14 +246,14 @@ slots:
     #    range: #See disease_ontology.yaml
     required: false
     multivalued: true
-    Range: Disease
+    range: Disease
     description: "Semicolon-delimited vector of conditions; Use healthy only if subject is known to be healthy; CRC=colorectal cancer;CD=Crohn's disease; for other abbreviations see study_condition"
 
   disease_subtype:
     #    range:  #See disease_ontology.yaml
     required: false
     multivalued: true
-    Range: Disease_subtype
+    range: Disease_subtype
     description: "Disease subtype; CD=Chrohn's Disease;AS=Ankylosing spondylitis;NAFLD=nonalcoholic fatty liver disease;for other abbreviations see study_condition"
 
   age:
@@ -343,7 +342,7 @@ slots:
   lifestyle:
     required: false
     multivalued: false
-    range: life_style
+    range: Life_style
     description: 'to describe the lifestyle of non-westernized people'
 
   brinkman_index:
@@ -529,7 +528,7 @@ slots:
   shigatoxin_2_elisa:
     required: false
     multivalued: false
-    Range: Pos_neg
+    range: Pos_neg
     description: 'Enzyme-linked immunosorbent assay for Shiga-toxigenic E.coli.'
 
   stool_texture:
@@ -1176,7 +1175,7 @@ slots:
     description: 'Curator must use IU/ml'
 
   dental_sample_type:
-    Range: Dental_Sample
+    range: Dental_Samples
     required: false
     multivalued: false
     description: 'Dental sample type.'
@@ -1559,15 +1558,23 @@ enums:
       CMR:
 
   Travel_Destination:
-    permissible_vales:
+    permissible_values:
       CMR:
+        text: CMR
       ETH:
+        text: ETH
       KEN:
+        text: KEN
       TZA:
+        text: TZA
       RWA:
+        text: RWA
       IND:
+        text: IND
       LKA:
+        text: LKA
       NPL:
+        text: NPL
 
   Condition:
     permissible_values:
