@@ -1,5 +1,6 @@
+name:
+description:
 id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
-    name: AsnicarF_2021 # Need to change this to a general name for validating files
     prefixes:
       linkml: https://w3id.org/linkml/
       schema: http://schema.org/
@@ -164,7 +165,6 @@ id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
           - uncurated_metadata
           - change_in_tumor_size
           - performance_status
-          - project_name
           - previous_therapy
           - toxicity_above_zero
           - studies
