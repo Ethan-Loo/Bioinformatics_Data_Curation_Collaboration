@@ -76,20 +76,20 @@ RUN=poetry run
 # 		--include python \
 # 		--include jsonschema $<
 
-AsnicarF_2021_MAM/backhedF.json: AsnicarF_2021_MAM/BackhedF_2015_metadata.tsv
-	$(RUN) python AsnicarF_2021_MAM/aggregated_to_json.py \
+backhedF2.json: BackhedF_2015_metadata.tsv
+	$(RUN) python3 aggregated_to_json.py \
 		--verbosity INFO \
 		--tsv_in_file $< \
-		--schema_file AsnicarF_2021_MAM/AsnicarF_2021_NEW.yaml \
+		--schema_file AsnicarF_2021_NEW.yaml \
 		--json_out_file $@ \
 		--project_name curatedMetagenomicDataCuration
 
-validate_linkml: AsnicarF_2021_MAM/backhedF.json AsnicarF_2021_MAM/AsnicarF_2021_NEW.yaml
+validate_linkml: backhedF2.json AsnicarF_2021_NEW.yaml
 	#  --module
 	# --index-slot XXX \
 	$(RUN) linkml-validate \
 		--target-class Project \
-		--schema AsnicarF_2021_MAM/AsnicarF_2021_NEW.yaml AsnicarF_2021_MAM/backhedF.json
+		--schema AsnicarF_2021_NEW.yaml backhedF2.json
 
 # Failed validating 'pattern' in schema['properties']['studies']['items']['properties']['samples']['items']['properties']['population']:
   #    {'description': 'can describe the belonging to a specific population',
