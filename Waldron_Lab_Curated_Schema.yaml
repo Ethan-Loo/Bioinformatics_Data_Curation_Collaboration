@@ -1,5 +1,4 @@
 name: Waldron_Lab_Curated_Schema
-desciption: Schema for Waldron Lab's curated metagenomic data
 id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
 prefixes:
   linkml: https://w3id.org/linkml/
