@@ -167,7 +167,6 @@ classes:
       - performance_status
       - previous_therapy
       - toxicity_above_zero
-      - studies
 
       # *_metadata.tsv:
     
@@ -212,6 +211,9 @@ slots:
     description: 'Subject identifier.'
 
   body_site:
+    any_of:
+      - aliases: host_anatomy
+      - aliases: host_anatomy_ontology
     range: Body_Site
     required: false
     multivalued: false
@@ -224,91 +226,83 @@ slots:
     description: 'Subsite of body site of acquisition.'
 
   antibiotics_current_use:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Subject is currently taking antibiotics.'
 
   antibiotics_family:
+    aliases: drug_ontology
     required: false
     multivalued: true
     range: Antibiotics
     description: 'Family of antibiotics currently used; Semicolon-separated.'
 
   study_condition:
-    #    range: #See disease_ontology.yaml
+    any_of:
+      - aliases: main_clinical_condition
+      - aliases: condition_under_study
+      - aliases: study_condition_ontology
+    range: Condition #See disease_ontology.yaml
     required: false
     multivalued: false
-    range: Condition
     description: 'The main disease or condition under study; control for controls;STEC=Shiga-toxigenic E.coli;CDI=Clostridium difficile infection;IBD=Inflammatory bowel disease;T2D= Type-2 diabetes;T1D=Type-1 diabetes;AD=Atopic dermatitis;AR=Allergic rhinitis;IGT=Impaired glucose tolerance;AS=Ankylosing spondylitis;RA=rheumatic arthritis;FMT=fecal microbiota transplantaion;SRP=Scaling and root planing;CMV=Cytomegalovirus;HBV_HDV_HEV= Hepatitis viruses;BD= Bechet-disease;ACVD= Artheriosclerotic Cardiovalscular Disease'
 
   disease:
-    #    range: #See disease_ontology.yaml
+    any_of:
+      - aliases: condition
+      - aliases: condition_ontology
+    range: Disease #See disease_ontology.yaml
     required: false
     multivalued: true
-    range: Disease
     description: "Semicolon-delimited vector of conditions; Use healthy only if subject is known to be healthy; CRC=colorectal cancer;CD=Crohn's disease; for other abbreviations see study_condition"
 
   disease_subtype:
-    #    range:  #See disease_ontology.yaml
+    range: Disease_subtype  #See disease_ontology.yaml
     required: false
     multivalued: true
-    range: Disease_subtype
     description: "Disease subtype; CD=Chrohn's Disease;AS=Ankylosing spondylitis;NAFLD=nonalcoholic fatty liver disease;for other abbreviations see study_condition"
 
   age:
-    any_of:
-      - range: integer
-      - range: NA_enum
+    range: integer
     required: false
     multivalued: false
     description: 'Subject age (years).'
 
   infant_age:
-    any_of:
-      - range: integer
-      - range: NA_enum
+    range: integer
     required: false
     multivalued: false
     description: 'Infant age (days); should be used for infants < 2 years old.'
 
   age_category:
-    any_of:
-      - range: cat_age
-      - range: NA_enum
+    alieses: age_category_ontology
+    range: cat_age
     required: false
     multivalued: false
     description: 'Age category: newborn < 1 year; 1 <= child < 12; 12 <= schoolage < 19; 19 <= adult <= 65; senior > 65.'
 
   gender:
-    any_of:
-      - range: Gender
-      - range: NA_enum
+    range: Gender
     required: false
     multivalued: false
     description: 'Subject gender.'
 
   visit_number:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Visit number for studies with repeated visits.'
 
   BMI:
-    any_of:
-      - range: NA_enum
-      - range: float
+    range: float
     required: false
     multivalued: false
     pattern: '[0-9]+\\.?[0-9]*'
     description: 'Body mass index (kg/m2).'
 
   country:
+    aliases: country_ontology
     range: Country
     required: true
     multivalued: false
@@ -334,9 +328,7 @@ slots:
     description: 'travel destination using ISO3 code from http://www.fao.org/countryprofiles/iso3list/en/.'
 
   non_westernized:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Subject belongs to a non-westernized community.'
@@ -348,18 +340,13 @@ slots:
     description: 'to describe the lifestyle of non-westernized people'
 
   brinkman_index:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'The Brinkman index if provided'
 
   days_from_first_collection:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
     description: 'Used for time series studies.'
@@ -377,48 +364,34 @@ slots:
     description: 'DNA extraction kit.'
 
   PMID:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
     pattern: '{[0-9]8}'
     description: 'Identifier of the main publication in PubMed.'
 
   number_reads:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: true
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Number of final reads - calculated from raw data.'
 
   number_bases:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: true
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Total number of bases sequenced in the sample - calculated from raw data.'
 
   minimum_read_length:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: true
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Minimum read length - calculated from raw data.'
 
   median_read_length:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: true
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Median read length - calculated from raw data.'
 
   NCBI_accession:
@@ -428,66 +401,49 @@ slots:
     description: 'Semicolon-separated vector of NCBI accessions.'
 
   pregnant:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Pregnancy of the subject (men: no).'
 
   lactating:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Lactating subjects (men: no).'
 
   birth_control_pil:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Use of the birth-control-pils at the sampling time (men: no).'
 
   smoker:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Currently a smoker at sampling.'
 
   ever_smoker:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Ever been a smoker.'
 
   alcohol:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Subject is reported as a drinker.'
 
   alcohol_numeric:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Alcohol consumption reported as a float.'
 
   mumps:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Subject has been through mumps in life.'
@@ -499,9 +455,7 @@ slots:
     description: 'AJCC staging for colorectal-cancer.'
 
   fobt:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Fecal occult blood test.'
@@ -513,12 +467,9 @@ slots:
     description: 'TNM classification for colorectal-cancer.'
 
   days_after_onset:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Days from the onset of the disease.'
 
   stec_count:
@@ -540,29 +491,21 @@ slots:
     description: 'Texture of the stool at sampling time.'
 
   insulin_cat:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Insulin intake (yes/no)'
 
   inr:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'International normalized ratio.'
 
   protein_intake:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Indication about the protein intake in the Mongolians diet.'
 
   flg_genotype:
@@ -572,12 +515,9 @@ slots:
     description: 'Any term for filaggrin-protein genotype.'
 
   momeducat:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Years of education of the mother of the subject.'
 
   hitchip_probe_class:
@@ -587,327 +527,220 @@ slots:
     description: 'High/Low species content onthe HIT-chip probe.'
 
   hitchip_probe_number:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'HIT-chip probe score.'
 
   mgs_richness:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Metagenomic species richness.'
 
   hla_drb12:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Hla_drb12 allele.'
 
   hla_dqa12:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Hla_dqa12 allele.'
 
   hla_dqa11:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Hla_dqa11 allele.'
 
   hla_drb11:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Hla_drb11 allele.'
 
   hla_dbq12:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Hla_dbq12 allele.'
 
   hla_dbq11:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Hla_dbq11 allele.'
 
   ctp:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Cytidine triphosphate level.'
 
   start_solidfood:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'First day of solid food introduction (newborns).'
 
   triglycerides:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   cholesterol:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   hdl:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   ldl:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   ALT:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'The Alanine aminotransferase test. STD. results of the test are allowed.'
 
   eGFR:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'The Estimated Glomerular Filtration Rate. STD. estimate of the test allowed.'
 
   adiponectin:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/l.'
 
   fasting_insulin:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use micro-units/ml.'
 
   hba1c:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use %.'
 
   c_peptide:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use ng/ml.'
 
   glp_1:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use pmol/l.'
 
   cd163:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use ng/ml.'
 
   il_1:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use pg/ml.'
 
   leptin:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use micrograms/l.'
 
   glucose:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   fasting_glucose:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use mg/dl.'
 
   fgf_19:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use pg/ml.'
 
   glutamate_decarboxylase_2_antibody:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Glutamic acid decarboxylase (GAD65) antibody assay.'
 
   creatinine:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use micro-mol/l.'
 
   creatine:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
-    description: 'Curators must use micro-mol/l.'
+    comments:
+      - 'Curators must use micro-mol/l.'
 
   albumine:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Albumine level; curators must use g/l.'
 
   bilubirin:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Bilubirin; curators must use mg/dl.'
 
   prothrombin_time:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Prothrombin time in seconds.'
 
   dyastolic_p:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Measured in mm/Hg.'
 
   systolic_p:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Measured in mm/Hg.'
 
   hscrp:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'High-sensitivity C-reactive protein test result;curator have to use mg/L'
 
   ferm_milk_prod_consumer:
@@ -942,29 +775,21 @@ slots:
     description: 'C-section main decision reason.'
 
   premature:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'If premature at birth.'
 
   birth_order:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Can be used for multiple birth.'
 
   age_twins_started_to_live_apart:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'Age at which twins started to live apart (years).'
 
   feeding_practice:
@@ -974,30 +799,21 @@ slots:
     description: 'Feeding practice.'
 
   breastfeeding_duration:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'curator must use days'
 
   formula_first_day:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
-    pattern: '[0-9]+'
     description: 'the age infants get the first formula feeding in days'
 
   ESR:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Erythrocyte sedimentation rate (ESR) in mm/H.'
 
   HLA:
@@ -1013,21 +829,15 @@ slots:
     description: 'Tested positive for AAB.'
 
   age_seroconversion:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Age at seroconvention was detected (days).'
 
   age_T1D_diagnosis:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Age at which T1D was diagnosed (days).'
 
   disease_stage:
@@ -1043,12 +853,9 @@ slots:
     description: 'Can be used for diseases which occur on different body parts like CD.'
 
   calprotectin:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Higher calprotectin is an indicator for inflammation in the gastrointestinal tract.'
 
   treatment:
@@ -1058,9 +865,7 @@ slots:
     description: 'medications or treatments against the diseases.'
 
   remission:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Remission of the disease.'
@@ -1075,105 +880,72 @@ slots:
 
 
   wbc:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'White blood cells count; curators must use *1000counts/µL'
 
 
   rbc:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Red blood cells count; curators must use *million_counts/µL'
 
 
   blood_platelet:
-    any_of:
-      - range: NA_enum
-      - range: integer
-    required:
+    range: float
+    required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curators must use *1000counts/µl'
 
 
   hemoglobinometry:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Hemoglobin concentration in blood; curators must use g/dl'
 
   ast:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Aspartate transaminase; curator must use U/l'
 
   alt:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Alanine aminotransferase; curator must use U/l'
 
   globulin:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curator must use g/l'
 
   urea_nitrogen:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curator must use mmol/l'
 
   ASO:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Antistreptolysin O; curator must use IU/ml'
 
   anti_ccp_antibody:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curator must use U/ml'
 
   rheumatoid_factor:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Curator must use IU/ml'
 
   dental_sample_type:
@@ -1183,47 +955,33 @@ slots:
     description: 'Dental sample type.'
 
   history_of_periodontitis:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'If the patients has been reported having previously suffered of periodontitis in one of more sites.'
 
   PPD_M:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('M')."
 
   PPD_B:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('B')."
 
   PPD_D:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('D')."
 
   PPD_L:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: "Depth of the pocket reached by the probe in a dental implant ('L')."
 
   zigosity:
@@ -1239,57 +997,39 @@ slots:
     description: 'Menopausal status.'
 
   BASDAI:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Bath Ankylosing Spondylitis Disease Activity Index'
 
   BASFI:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Bath Ankylosing Spondylitis Functional Index'
 
   HBI:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Harvey-Bradshaw Index clinical indication of active disease and inflammation'
 
   SCCAI:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'simple clinical colitis activity index'
 
   birth_weight:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'curators must use gramms'
 
   gestational_age:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'duration time of pregnancy;curatos must use weeks'
 
   diet:
@@ -1311,49 +1051,37 @@ slots:
     description: 'RECIST classification for response to cancer-therapy: SD=Stable Disease; PR=Partial Response; PD=Progression Disease; CR=Complete Response'
 
   ORR:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Overall Response Rate (see also RECIST)'
 
   PFS12:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: 'Progression-free survival in 12 months.'
 
   change_in_tumor_size:
-    any_of:
-      - range: NA_enum
-      - range: integer
+    range: integer
     required: false
     multivalued: false
     description: ''
 
   performance_status:
-    any_of:
-      - range: NA_enum
-      - range: float
+    range: float
     required: false
     multivalued: false
     description: ''
 
   previous_therapy:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: ''
 
   toxicity_above_zero:
-    any_of:
-      - range: NA_enum
-      - range: YesNo
+    range: YesNo
     required: false
     multivalued: false
     description: ''
@@ -1374,14 +1102,11 @@ slots:
 
 enums:
 
-  NA_enum:
-    permissible_values:
-      NA:
-
   YesNo:
     permissible_values:
-      'yes':
-      'no':
+      yes:
+      no:
+      NA:
 
   cat_age:
     permissible_values:
@@ -1391,12 +1116,14 @@ enums:
       adult:
       senior:
       unknown:
+      NA:
 
   Gender:
     permissible_values:
       male:
       female:
       other:
+      NA:
 
   Body_Site:
     permissible_values:
