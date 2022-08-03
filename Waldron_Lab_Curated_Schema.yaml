@@ -212,8 +212,9 @@ slots:
 
   body_site:
     any_of:
-      - aliases: host_anatomy
-      - aliases: host_anatomy_ontology
+      - aliases:
+        - host_anatomy
+        - host_anatomy_ontology
     range: Body_Site
     required: false
     multivalued: false
@@ -232,7 +233,8 @@ slots:
     description: 'Subject is currently taking antibiotics.'
 
   antibiotics_family:
-    aliases: drug_ontology
+    aliases:
+      - drug_ontology
     required: false
     multivalued: true
     range: Antibiotics
@@ -240,9 +242,10 @@ slots:
 
   study_condition:
     any_of:
-      - aliases: main_clinical_condition
-      - aliases: condition_under_study
-      - aliases: study_condition_ontology
+      - aliases:
+          - main_clinical_condition
+          - condition_under_study
+          -  study_condition_ontology
     range: Condition #See disease_ontology.yaml
     required: false
     multivalued: false
@@ -250,8 +253,9 @@ slots:
 
   disease:
     any_of:
-      - aliases: condition
-      - aliases: condition_ontology
+      - aliases:
+          - condition
+          - condition_ontology
     range: Disease #See disease_ontology.yaml
     required: false
     multivalued: true
@@ -276,7 +280,8 @@ slots:
     description: 'Infant age (days); should be used for infants < 2 years old.'
 
   age_category:
-    alieses: age_category_ontology
+    aliases:
+      - age_category_ontology
     range: cat_age
     required: false
     multivalued: false
@@ -298,11 +303,11 @@ slots:
     range: float
     required: false
     multivalued: false
-    pattern: '[0-9]+\\.?[0-9]*'
     description: 'Body mass index (kg/m2).'
 
   country:
-    aliases: country_ontology
+    aliases:
+      - country_ontology
     range: Country
     required: true
     multivalued: false
@@ -311,7 +316,7 @@ slots:
   location:
     required: false
     multivalued: false
-    pattern: '.+'
+#    pattern: '.+'
     description: 'Free-form additional location information.'
 
   population:
