@@ -46,7 +46,7 @@ classes:
       - days_from_first_collection
       - sequencing_platform
       - DNA_extraction_kit
-      - PMID
+      - PMID #study level
       - number_reads
       - number_bases
       - minimum_read_length
@@ -211,10 +211,9 @@ slots:
     description: 'Subject identifier.'
 
   body_site:
-    any_of:
-      - aliases:
-        - host_anatomy
-        - host_anatomy_ontology
+    aliases:
+      - host_anatomy
+      - host_anatomy_ontology
     range: Body_Site
     required: false
     multivalued: false
@@ -241,21 +240,19 @@ slots:
     description: 'Family of antibiotics currently used; Semicolon-separated.'
 
   study_condition:
-    any_of:
-      - aliases:
-          - main_clinical_condition
-          - condition_under_study
-          -  study_condition_ontology
+    aliases:
+      - main_clinical_condition
+      - condition_under_study
+      -  study_condition_ontology
     range: Condition #See disease_ontology.yaml
     required: false
     multivalued: false
     description: 'The main disease or condition under study; control for controls;STEC=Shiga-toxigenic E.coli;CDI=Clostridium difficile infection;IBD=Inflammatory bowel disease;T2D= Type-2 diabetes;T1D=Type-1 diabetes;AD=Atopic dermatitis;AR=Allergic rhinitis;IGT=Impaired glucose tolerance;AS=Ankylosing spondylitis;RA=rheumatic arthritis;FMT=fecal microbiota transplantaion;SRP=Scaling and root planing;CMV=Cytomegalovirus;HBV_HDV_HEV= Hepatitis viruses;BD= Bechet-disease;ACVD= Artheriosclerotic Cardiovalscular Disease'
 
   disease:
-    any_of:
-      - aliases:
-          - condition
-          - condition_ontology
+    aliases:
+      - condition
+      - condition_ontology
     range: Disease #See disease_ontology.yaml
     required: false
     multivalued: true
@@ -1133,92 +1130,150 @@ enums:
   Body_Site:
     permissible_values:
       stool:
+        aliases:
+          - UBERON_0001988
         description: feces
         meaning: UBERON_0001988
       skin:
+        aliases:
+          - UBERON_0002097
         description: skin of body
         meaning: UBERON_0002097
       vagina:
+        aliases:
+          - UBERON_0000996
         description: vagina
         meaning: UBERON_0000996
       oralcavity:
+        aliases:
+          - UBERON_0000167
         description: oral cavity
         meaning: UBERON_0000167
       nasalcavity:
+        aliases:
+          - UBERON_0001707
         description: nasal cavity
         meaning: UBERON_0001707
       lung:
+        aliases:
+          - UBERON_0002048
         description: lung
         meaning: UBERON_0002048
       milk:
+        aliases:
+          - UBERON_0001913
         description: milk
         meaning: UBERON_0001913
   Body_Subsite:
     permissible_values:
       anterior_nares:
+        aliases:
+          - UBERON_2001427
         description: anterior naris
         meaning: UBERON_2001427
       hard_palate:
+        aliases:
+          - UBERON_0003216
         description: hard palate
         meaning: UBERON_0003216
       keratinized_gingiva:
+        aliases:
+          - UBERON_0001949
         description: gingival epithelium
         meaning: UBERON_0001949
       l_retroauricular_crease:
+        aliases:
+          - UBERON_0019243
         description: skin crease
         meaning: UBERON_0019243
       r_retroauricular_crease:
+        aliases:
+          - UBERON_0019243
         description: skin crease
         meaning: UBERON_0019243
       mid_vagina:
+        aliases:
+          - UBERON_0013524
         description: median vaginal canal
         meaning: UBERON_0013524
       palatine_tonsils:
+        aliases:
+          - UBERON_0002373
         description: palatine tonsil
         meaning: UBERON_0002373
       saliva:
+        aliases:
+          - UBERON_0001836
         description: saliva
         meaning: UBERON_0001836
       supragingival_plaque:
+        aliases:
+          - UBERON_0016485
         description: supragingival dental plaque
         meaning: UBERON_0016485
       subgingival_plaque:
+        aliases:
+          - UBERON_0016484
         description: subgingival dental plaque
         meaning: UBERON_0016484
       throat:
+        aliases:
+          - UBERON_0000341
         description: throat
         meaning: UBERON_0000341
       vaginal_introitus:
+        aliases:
+          - UBERON_0012317
         description: vaginal oriface
         meaning: UBERON_0012317
       posterior_fornix:
+        aliases:
+          - UBERON_0016486
         description: posterior fornix of vagina
         meaning: UBERON_0016486
       tongue_dorsum:
+        aliases:
+          - UBERON_0009471
         description: dorsum of tongue
-        meaning: UBERON_0009471
+        meaning:  UBERON_0009471
       sputum:
+        aliases:
+          - UBERON_0007311
         description: sputum
         meaning: UBERON_0007311
       buccal_mucosa:
+        aliases:
+          - UBERON_0006956
         description: buccal mucosa
         meaning: UBERON_0006956
       left_elbow:
+        aliases:
+          - UBERON_0001461
         description: elbow
         meaning: UBERON_0001461
       right_ear:
+        aliases:
+          - UBERON_0035174
         description: right ear
         meaning: UBERON_0035174
       left_ear:
+        aliases:
+          - UBERON_0035295
         description: left ear
         meaning: UBERON_0035295
       right_elbow:
+        aliases:
+          - UBERON_0001461
         description: elbow
         meaning: UBERON_0001461
       rectal_swab:
+        aliases:
+          - NCIT_C173641
         description: rectal swab specimen
         meaning: NCIT_C173641
       chest:
+        aliases:
+          - UBERON_0001443
         description: chest
         meaning: UBERON_0001443
 
