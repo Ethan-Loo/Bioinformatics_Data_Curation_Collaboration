@@ -6,7 +6,7 @@
       "subject_id": "subject123",
       "age": 22,
       "gender": "male",
-      "body_site": "lung",
+      "body_site": "UBERON_0001988",
       "country": "NOR",
       "sequencing_platform": "IlluminaMiSeq",
       "number_reads": 54321,

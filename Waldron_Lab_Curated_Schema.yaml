@@ -1,14 +1,18 @@
 name: Waldron_Lab_Curated_Schema
-id: https://w3id.org/linkml/examples/personinfo # We need to change this ID
+id: https://waldronlab.io
 prefixes:
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
+  ORCID: https://orcid.org/
+  EFO: http://www.ebi.ac.uk/efo/EFO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
-    
-    #  personinfo: https://w3id.org/linkml/examples/personinfo/
-    #  ORCID: https://orcid.org/
-  #  PATO: http://purl.obolibrary.org/obo/PATO_
+  HP: http://purl.obolibrary.org/obo/HP_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  DOID: http://purl.obolibrary.org/obo/DOID_
+  MONDO: http://purl.obolibrary.org/obo/MONDO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  
 imports:
   - linkml:types
 default_range: string
@@ -243,7 +247,7 @@ slots:
     aliases:
       - main_clinical_condition
       - condition_under_study
-      -  study_condition_ontology
+      - study_condition_ontology
     range: Condition #See disease_ontology.yaml
     required: false
     multivalued: false
@@ -1478,71 +1482,393 @@ enums:
 
   Disease:
     permissible_values:
-      healthy:
-      generic_diabetes:
-      acute_diarrhoea:
-      carcinoma_surgery_history:
-      chorioamnionitis:
-      hepatitis:
       ACVD:
-      NK:
-      CRC:
-      STEC:
-      melanoma:
-      adenoma:
-      arthritis:
+        aliases:
+          - EFO_0003914
+        description: atherosclerosis
+        meaning: EFO_0003914
+      acute_diarrhoea:
+        aliases:
+          - DOID_0050140
+        description: acute diarrhea
+        meaning: DOID_0050140
       cellulitis:
+        aliases:
+          - EFO_0003035
+        description: cellulitis
+        meaning: EFO_0003035
+      melanoma:
+        aliases:
+          - EFO_0000756
+        description: melanoma
+        meaning: EFO_0000756
       gangrene:
-      few_polyps:
+        aliases:
+          - EFO_0008574
+        description: gangrene
+        meaning: EFO_0008574
       osteoarthritis:
+        aliases:
+          - EFO_0002506
+        description: osteoarthritis
+        meaning: EFO_0002506
+      control:
+        aliases:
+          - EFO_0001461
+        description: control
+        meaning: EFO_0001461
+      NK:
+        aliases:
+          - EFO_0000573
+        description: natural killer cell
+        meaning: EFO_0000573 #needs review
       pyelonefritis:
-      pre-eclampsia:
+        aliases:
+          - EFO_1001141
+        description: pyelonephritis
+        meaning: EFO_1001141
       salmonellosis:
+        aliases:
+          - MONDO_0000827
+        description: salmonellosis
+        meaning: MONDO_0000827 #needs review
       sepsis:
+        aliases:
+          - EFO_1001478
+        description: sepsis
+        meaning: EFO_1001478
       skininf:
+        aliases:
+          - NCIT_C35025
+        description: skin infection
+        meaning: NCIT_C35025 #needs review
       suspinf:
+        description: #suspected infection??
+#        #meaning: UNKNOWN
+      arthritis:
+        aliases:
+          - EFO_0005856
+        description: arthritis
+        meaning: EFO_0005856
+      STEC:
+        aliases:
+          - CHEBI_27026
+        description: shiga toxin
+        meaning: CHEBI_27026 #needs review
+      CRC:
+        aliases:
+          - EFO_0005842
+        description: colorectal Cancer
+        meaning: EFO_0005842
+      adenoma:
+        aliases:
+          - EFO_0000232
+        description: adenoma
+        meaning: EFO_0000232
       fatty_liver:
+        aliases:
+          - MONDO_0004790
+        description: fatty liver
+        meaning: MONDO_0004790
       hypertension:
+        aliases:
+          - EFO_0000537
+        description: hypertension
+        meaning: EFO_0000537
+      pre-hypertension:
+        aliases:
+          - EFO_0004772
+        description: early onset hypertension ???
+        meaning: EFO_0004772 #needs review
       coeliac:
+        aliases:
+          - EFO_0001060
+        description: celiac disease
+        meaning: EFO_0001060
       asthma:
+        aliases:
+          - EFO_0000270
+        description: asthma
+        meaning: EFO_0000270
       gestational_diabetes:
+        aliases:
+          - EFO_0004593
+        description: gestational diabetes
+        meaning: EFO_0004593
       cirrhosis:
+        description: cirrhosis of liver
+        meaning: EFO_0001422
+      HBV:
+        aliases:
+          - EFO_0004197
+        description: hepatitis B virus infection
+        meaning: EFO_0004197
+      HDV:
+        aliases:
+          - EFO_0007304
+        description: hepatitis D virus infection
+        meaning: EFO_0007304
+      HEV:
+        aliases:
+          - EFO_0007303
+        description: hepatitis E virus infection
+        meaning: EFO_0007303
       CMV:
+        aliases:
+          - EFO_0001062
+        description: cytomegalovirus infection
+        meaning: EFO_0001062
       CDI:
+        aliases:
+          - EFO_0009130
+        description: clostridium difficile infection
+        meaning: EFO_0009130
       IBD:
+        aliases:
+          - EFO_0000555
+        description: irritable bowel syndrome
+        meaning: EFO_0000555
       T2D:
+        aliases:
+          - EFO_0001360
+        description: type 2 diabetes mellitus
+        meaning: EFO_0001360
       T1D:
+        aliases:
+          - EFO_0001359
+        description: type 1 diabetes mellitus
+        meaning: EFO_0001359
       AD:
+        aliases:
+          - EFO_0000249
+        description: alzheimer's disease
+        meaning: EFO_0000249
       AR:
+        aliases:
+          - EFO_1000815
+        description: Aortic Regurgitation #???
+        meaning: EFO_1000815 #needs review
       IGT:
-      BD:
-      ME/CFS:
-      premature_born:
-      schizofrenia:
+        aliases:
+          - EFO_0002546
+        description: abnormal glucose tolerance
+        meaning: EFO_0002546
+      schizophrenia:
+        aliases:
+          - EFO_0000692
+        description: schizophrenia
+        meaning: EFO_0000692
       ascites:
+        aliases:
+          - HP_0001541
+        description: ascites
+        meaning: HP_0001541 #needs review
       wilson:
-      otitis:
+        aliases:
+          - NCIT_C84756
+        description: wilson disease
+        meaning: NCIT_C84756 #needs review
+      otitis: # There are multiple versions of otitis
+        description: otitis
+        #meaning: UNKNOWN
       bronchitis:
+        aliases:
+          - EFO_0009661
+        description: bronchitis
+        meaning: EFO_0009661
       pneumonia:
+        aliases:
+          - EFO_0003106
+        description: pneumonia
+        meaning: EFO_0003106
       respiratoryinf:
+        aliases:
+          - NCIT_C27219
+        description: respiratory tract infection
+        meaning: NCIT_C27219 #needs review
       cough:
+        aliases:
+          - HP_0012735
+        description: cough
+        meaning: HP_0012735 #needs review
       stomatitis:
+        aliases:
+          - EFO_0009688
+        description: stomatitis
+        meaning: EFO_0009688
       fever:
+        aliases:
+          - HP_0001945
+        description: fever
+        meaning: HP_0001945 #needs review
       pyelonephritis:
+        aliases:
+          - EFO_1001141
+        description: pyelonephritis
+        meaning: EFO_1001141
       infectiousgastroenteritis:
+        aliases:
+          - EFO_1001463
+        description: gastroenteritis
+        meaning: EFO_1001463
       tonsillitis:
+        aliases:
+          - HP_0011110
+        description: Tonsillitis
+        meaning: HP_0011110 #needs review *Recurrent tonsilitis*
       cystitis:
+        aliases:
+          - EFO_1000025
+        description: cystitis
+        meaning: EFO_1000025
       abdominalhernia:
+        aliases:
+          - HP_0004299
+        description: abdominal Hernia
+        meaning: HP_0004299 #needs review
       psoriasis:
+        aliases:
+          - EFO_0000676
+        description: psoriasis
+        meaning: EFO_0000676
+      cephalosporins:
+        aliases:
+          - NCIT_C357
+        description: a large group of antibiotics derived from the mold Acremonium
+        meaning: NCIT_C357 #needs review
+      AS:
+        aliases:
+          - EFO_0003898
+        description: ankylosing spondylitis
+        meaning: EFO_0003898
       RA:
+        aliases:
+          - EFO_0000685
+        description: rheumatoid Arthritis
+        meaning: EFO_0000685
       metabolic_syndrome:
-      metastases:
-      hypercholesterolemia:
+        aliases:
+          - EFO_0000195
+        description: metabolic syndrome
+        meaning: EFO_0000195
+      FMT:
+        description: fecal microbiota transplant
+        # meaning: #cannot find ontology
+      premature_born:
+        aliases:
+          - EFO_0003917
+        description: premature birth
+        meaning: EFO_0003917
       periodontitis:
-      peri-implantitis:
-      mucositis:
+        aliases:
+          - EFO_0000649
+        description: periodontitis
+        meaning: EFO_0000649
+      SRP:
+        description: #signal recognition particle?
+        # meaning: #http://purl.org/obo/owl/GO#GO_0005786
       STH:
-      migraine:
+        description: #somatotropin
+        # meaning:  #http://purl.org/obo/owl/FMA#FMA_74637  #needs review
+      BD:
+        aliases:
+          - EFO_0003780
+        description: behcet's syndrome
+        meaning: EFO_0003780
+      chorioamnionitis:
+        aliases:
+          - EFO_0009948
+        description: chorioamnionitis
+        meaning: EFO_0009948
+      pre-eclampsia:
+        aliases:
+          - EFO_0000668
+        description: preeclampsia
+        meaning: EFO_0000668
+      carcinoma_surgery_history:
+        description: history of carcinoma surgery
+        #meaning: UNKNOWN
+      healthy:
+        aliases:
+          - NCIT_C115935
+        description: healthy
+        meaning: NCIT_C115935
+      hepatitis:
+        aliases:
+          - HP_0012115
+        description: hepatitis
+        meaning: HP_0012115
+      hypercholesterolemia:
+        aliases:
+          - HP_0003124
+        description: hypercholesterolemia
+        meaning: HP_0003124
+      ascaris_lumbricoides:
+        aliases:
+          - EFO_0007154
+        description: ascaris lumbricoides
+        meaning: EFO_0007154
+      necator_americanus:
+        aliases:
+          - NCIT_C123524
+        description: necator americanus
+        meaning: NCIT_C123524
+      trichuris_trichiura:
+        aliases:
+          - EFO_0007524
+        description: trichuris trichiura
+        meaning: EFO_0007524
+      metastases:
+        aliases:
+          - EFO_0000384
+        description: crohn's disease
+        meaning: EFO_0000384
+      UC:
+        aliases:
+          - EFO_0000729
+        description: ulcerative Colitis
+        meaning: EFO_0000729
+      smalladenoma:
+        aliases:
+          - NCIT_C5340
+        description: small intestinal adenoma
+        meaning: NCIT_C5340
+      largeadenoma:
+        aliases:
+          - DOID_0050914
+        description: large intestinal adenoma
+        meaning: DOID_0050914 #needs review
+      advancedadenoma:
+        aliases:
+          - EFO_0000228
+        description: adenocarcinoma
+        meaning: EFO_0000228
+      carcinoma:
+        aliases:
+          - EFO_0000228
+        description: carcinoma
+        meaning: EFO_0000313
+      cholera:
+        aliases:
+          - NCIT_C157812
+        description: cholera
+        meaning: NCIT_C157812
+      T1D_nonconverter:
+        description: #what is a non-converter???
+        #meaning: UNKNOWN
+      T1D_seroconverter:
+        description: Type 1 diabetes usually has a preclinical phase identified by circulating islet autoantibodies, but the rate of progression to diabetes after seroconversion to islet autoantibodies is uncertain.
+        #meaning: UNKNOWN
+      NAFLD:
+        aliases:
+          - EFO_1001248
+        description: non alcoholic fatty liver disease
+        meaning: EFO_1001248
+      Indeterminate_colitis:
+        aliases:
+          - EFO_1000034
+        description: indeterminate colitis
+        meaning: EFO_1000034
 
   Disease_subtype:
     permissible_values:
