@@ -211,7 +211,8 @@ trichuris_trichiura:
   meaning:  http://www.ebi.ac.uk/efo/EFO_0007524
 metastases:
   description: metastasis status
-  meaning: http://snomed.info/id/260874000 #needs reviewCD:
+  meaning: http://snomed.info/id/260874000 #needs review
+CD:
   description: crohn's disease
   meaning:  http://www.ebi.ac.uk/efo/EFO_0000384
 UC:
@@ -225,7 +226,8 @@ largeadenoma:
   meaning: http://purl.obolibrary.org/obo/DOID_0050914 #needs review
 advancedadenoma:
   description: advanced adenoma
-  meaning: http://purl.obolibrary.org/obo/NCIT_C2855 #needs review, could not find advance adenoma only adenoma ontologyadenocarcinoma:
+  meaning: http://purl.obolibrary.org/obo/NCIT_C2855 #needs review, could not find advance adenoma only adenoma ontology
+adenocarcinoma:
   description: adenocarcinoma
   meaning:  http://www.ebi.ac.uk/efo/EFO_0000228
 carcinoma:
