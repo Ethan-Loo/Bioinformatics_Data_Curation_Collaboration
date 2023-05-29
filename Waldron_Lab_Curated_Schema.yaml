@@ -175,7 +175,7 @@ classes:
       # *_metadata.tsv:
     
     # slots are first-class entities in the metamodel
-    # delcaring them here allows them to be reused elsewhere
+    # declaring them here allows them to be reused elsewhere
 slots:
 
   project_name:
@@ -196,8 +196,20 @@ slots:
     multivalued: false
     pattern: '[a-zA-Z-]+_[0-9]4} | [a-zA-Z-]+_[0-9]4}[a-zA-Z-]+ | [a-zA-Z-]+_[0-9]4}_[a-zA-Z-]+ | [a-zA-Z-]+_[0-9]4}_[a-zA-Z0-9]+'
     # decide whether to keep regex patterns
-    description: 'Dataset name.'
-
+    description: 'Dataset name. This name identifies uniquely the dataset.' 
+    comments: 'Usually it is the surname of the first author, name(s) initials & publication date, \
+	allowing an easy link with the paper. Most common exceptions are \
+	big consortia which are better referred as their names as this is \
+	easier for the user.'
+    notes: 'Curators must use: Surname, initials of the first name(s) and \
+	publication date. Example, publishing his paper in 2022, \
+	Paolo Manghi will curate and upload the dataset ManghiP_2022. \
+	Most common exceptions are big consortia which are preferable to be named
+	after their ID, e.g.: MetaCardis or HMP, followed by a date of publication, \
+	which usually is the the date of the first paper of the consortium.
+	Some datasets are intentionally divided by the curator into 
+	name_a, name_b, name_c, etc., this is not forbidden though not stricly advised.'
+    
   sample_id:
     range: string
     required: true
@@ -205,6 +217,8 @@ slots:
     pattern: '[0-9a-zA-Z_]'
     # decide whether to keep regex patterns
     description: 'Sample identifier.'
+    notes: 'Curators should avoid use dots (.), parentheses or other special characters.'
+    comments: 'Aside, the ID does not contain any meaniungful information and must not be used fot that purpose.'
 
   subject_id:
     range: string
@@ -212,7 +226,13 @@ slots:
     multivalued: false
     pattern: '[0-9a-zA-Z_]'
     # decide whether to keep regex patterns
-    description: 'Subject identifier.'
+    description: 'Subject identifier. It DIFFERS from the sample_id by the fact that different samples CAN SHARE the same SUBJECT_ID'
+    comments: 'There are two cases for two samples sharing the same subject: \
+	1. samples derived from different body-sites of one persone \
+	2. samples derivced from same persone at 2 different time-points \
+	Case 1. must be handled looking at "body_site", case 2. looking at "days_from_first_collection"'
+    notes. 'If the curator knows that a subject has been sampled multiple times, she/he must have the mapping or cannot insert the dataset in the database. \
+	This is because other user may analyse the same indivioduals as if there are two independent individuals.'
 
   body_site:
     aliases:
@@ -221,13 +241,20 @@ slots:
     range: Body_Site
     required: false
     multivalued: false
-    description: 'Bodysite of acquisition.'
+    description: 'Bodysite of acquisition. Human-derived microbiome are sampled at different body-sites and this determines their composition and function.'
+    comments: 'Analysing multiple body-sites at once usually is done only for the purpose of comparing different microbiomes (e.g. the body-site is the most 
+        important attributes)'
+    notes: 'No remarks for curators as soon as they adopt the ontology.'
 
   body_subsite:
     range: Body_Subsite
     required: false
     multivalued: false
-    description: 'Subsite of body site of acquisition.'
+    description: 'Subsite of body site of acquisition. If DIFFERS from body-site in that body-subsites sharing the body-site are normally comparable one to each other.'
+    comments: 'As 90% of the human shotgun microbiomes are sampled from feces, it is common not to have this. Oral cavity, however, is also important and for oral cabity it is 
+	very important to have it.'
+    notes: 'In case of oral cavity and skin in particular, curators should put particular efforts in understanding from the publication which is the current 
+	are of sampling (e.g. tongue, plaque, saliva)'
 
   antibiotics_current_use:
     range: YesNo
@@ -244,14 +271,17 @@ slots:
     description: 'Family of antibiotics currently used; Semicolon-separated.'
 
   study_condition:
-    aliases:
-      - main_clinical_condition
-      - condition_under_study
-      - study_condition_ontology
+    any_of:
+      - aliases:
+          - main_clinical_condition
+          - condition_under_study
+          - study_condition_ontology
     range: Condition #See disease_ontology.yaml
     required: false
     multivalued: false
     description: 'The main disease or condition under study; control for controls;STEC=Shiga-toxigenic E.coli;CDI=Clostridium difficile infection;IBD=Inflammatory bowel disease;T2D= Type-2 diabetes;T1D=Type-1 diabetes;AD=Atopic dermatitis;AR=Allergic rhinitis;IGT=Impaired glucose tolerance;AS=Ankylosing spondylitis;RA=rheumatic arthritis;FMT=fecal microbiota transplantaion;SRP=Scaling and root planing;CMV=Cytomegalovirus;HBV_HDV_HEV= Hepatitis viruses;BD= Bechet-disease;ACVD= Artheriosclerotic Cardiovalscular Disease'
+    comments: 'study_condition/main_clinical_condition might be == control when the next field, "disease" is not "healthy". This is because a subjkect has been 
+	considerered a control by a clinician and therefore we respect that annotation.'
 
   disease:
     aliases:
@@ -272,13 +302,13 @@ slots:
     range: integer
     required: false
     multivalued: false
-    description: 'Subject age (years).'
+    description: 'Subject age (years).' 
 
   infant_age:
     range: integer
     required: false
     multivalued: false
-    description: 'Infant age (days); should be used for infants < 2 years old.'
+    description: 'Infant age (days); should be used for infants < 1 years old.'
 
   age_category:
     aliases:
@@ -299,6 +329,7 @@ slots:
     required: false
     multivalued: false
     description: 'Visit number for studies with repeated visits.'
+    notes: 'This is very similar and derivable from days_from_first_collection which however is more detailed.'
 
   BMI:
     range: float
@@ -313,6 +344,10 @@ slots:
     required: true
     multivalued: false
     description: 'Country of acquisition using ISO3 code from http://www.fao.org/countryprofiles/iso3list/en/.'
+    notes: 'Curators MUST HAVE this info or cannot add the data. It is preferable to acquire also the "location"
+        attributes but in case it is not possible the country is a good proxy for nutrition, habits, ethnical and economic aspects.'
+    comments: 'For analysis, definitely the 3rd most important attibute by the point of view of the microbiome, after 
+        the body-site and the dataset population effects.'
 
   location:
     required: false
@@ -325,49 +360,60 @@ slots:
     required: false
     multivalued: false
     pattern: '[a-zA-Z]\\S+'
-    description: 'can describe the belonging to a specific population'
+    description: 'Can describe the belonging to a specific population.'
+    notes: 'It may have some redundancy with respect to the location, which however is preferable.'
 
   travel_destination:
     range: Travel_Destination
     required: false
     multivalued: false
-    description: 'travel destination using ISO3 code from http://www.fao.org/countryprofiles/iso3list/en/.'
+    description: 'As "country" uses ISO3 code from http://www.fao.org/countryprofiles/iso3list/en/. It refers to a subject who has travel \
+	and has therefore exposed her/his microbiome to a different environment.'
 
   non_westernized:
     range: YesNo
     required: false
     multivalued: false
-    description: 'Subject belongs to a non-westernized community.'
+    description: 'Subject belongs to a non-westernized community. Westernization has no definite boundary but refers to lifestyle \
+	characterised by the highly pervasive presence of industrially treated food and the of anitbiotics in the consummed food and \
+	used as treatments. Importantly, some "non-westernized" communities might share higher or lower degrees of absence of these attributes, \
+	depending on the curator.'
+    notes: 'Alhotugh this is partly subjective, curator should not insert in this categroy all samples from places far from the curator s nationality. \
+	If participants are from a hospitals follwing ABX treatment, they should be considererd all westernized.'
 
   lifestyle:
     required: false
     multivalued: false
     range: Life_style
-    description: 'to describe the lifestyle of non-westernized people'
+    description: 'To describe the lifestyle of non-westernized people, mainly referring to their food-retrieval modality. This is typically used just in \
+	highly non-westernized people (Tanzanian hunther-gatherers, Mongolian shepherds, ...'
 
   brinkman_index:
     range: float
     required: false
-    multivalued: false
-    description: 'The Brinkman index if provided'
+    multivalued: false 
+    description: 'The Brinkman index if provided. The Brinkman index is a measure of cigarette smoke exposure and is used as a predictor of chronic obstructive pulmonary disease.'
 
   days_from_first_collection:
     range: integer
     required: false
     multivalued: false
     description: 'Used for time series studies.'
+    comments: 'In case multiple sample_id share the same subject_id AND the same body_site, the gap in days between the samples_ids must be searched here.'
+    notes: 'Curators must consider that, when multiple timepoints are present in the study, this field and the subject_id must be filled correctly.'
 
   sequencing_platform:
     range: Sequencing_Platform
     required: true
     multivalued: false
-    description: 'This will be modified as new sequencing platforms are added to the database.'
+    description: 'This is the main model of the machine used to perform the sequencing. Currently only different model of Illumina machine and Ion Torrent are present.'
 
   DNA_extraction_kit:
     range: DNA_Extraction_Kit
     required: false
     multivalued: false
-    description: 'DNA extraction kit.'
+    description: 'DNA extraction kit retrieved from publication.'
+    notes: 'In the future this field will be updated and ameliorated.'
 
   PMID:
     range: integer
@@ -441,6 +487,7 @@ slots:
     required: false
     multivalued: false
     description: 'Subject is reported as a drinker.'
+    comments: 'This is meant as a binary value for the subjects drink alcohol or not.'
 
   alcohol_numeric:
     range: float
@@ -464,7 +511,7 @@ slots:
     range: YesNo
     required: false
     multivalued: false
-    description: 'Fecal occult blood test.'
+    description: 'Fecal occult blood test, in a binary fashion.'
 
   tnm:
     required: false
@@ -477,12 +524,14 @@ slots:
     required: false
     multivalued: false
     description: 'Days from the onset of the disease.'
+    notes: 'Usable for disease which are subject to flare, such as Crohn s disease'
 
   stec_count:
     required: false
     multivalued: false
     range: Stec_count_enum
-    description: 'Amount of STEC colonies detected.'
+    description: 'Amount of STEC colonies detected. STEC stands for Shigatoxigenic Escherichia coli, which means a specific subspecies of E.coli which produces Shiga-toxin.'
+    comments: 'This toxin was responsible of a epidemy in Germany.'
 
   shigatoxin_2_elisa:
     required: false
@@ -495,12 +544,15 @@ slots:
     multivalued: false
     range: Texture
     description: 'Texture of the stool at sampling time.'
+    comment: 'This will be substituted in the future by Bristol scale or deleted as it is largely uninformative.'
+    notes: 'Currently this is likely to be deleted.'
 
   insulin_cat:
     range: YesNo
     required: false
     multivalued: false
     description: 'Insulin intake (yes/no)'
+    notes: 'This will be likely deleted in favour of a better column for treatments.'
 
   inr:
     range: float
@@ -513,6 +565,7 @@ slots:
     required: false
     multivalued: false
     description: 'Indication about the protein intake in the Mongolians diet.'
+    notes: 'This is likely to be eliminated or integrated in some other dietary information.'
 
   flg_genotype:
     required: false
@@ -596,97 +649,128 @@ slots:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use mg/dl.'
+    description: 'Concentration of triglycerides in the blood.'
+    comments: 'Values in this package are reported in mg/dl.'
+    notes: 'Curators must use mg/dl.'
 
   cholesterol:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use mg/dl.'
+    description: 'Concentration of cholesterol in the blood.'
+    comments: 'Values in this package are reported in mg/dl.'
+    notes: 'Curators must use mg/dl.'
 
   hdl:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use mg/dl.'
+    description: 'Concentration of high-density lipoprotein in the blood.'
+    comments: 'Values in this package are reported in mg/dl.'
+    notes: 'Curators must use mg/dl.'
 
   ldl:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use mg/dl.'
+    description: 'Concentration of low-density lipoprotein in the blood.'
+    comments: 'Values in this package are reported in mg/dl.'
+    notes: 'Curators must use mg/dl.'
 
   ALT:
     range: float
     required: false
     multivalued: false
-    description: 'The Alanine aminotransferase test. STD. results of the test are allowed.'
+    description: 'Concentration of Alanine aminotransferase in the blood (indicator of liver injury or disease).'
+    notes: 'The Alanine aminotransferase test. STD. results of the test are allowed.'
 
   eGFR:
     range: float
     required: false
     multivalued: false
-    description: 'The Estimated Glomerular Filtration Rate. STD. estimate of the test allowed.'
+    description: 'Measure of flow rate of filtered fluid through the kidney (indicator of kidney functioning).'
+    notes: 'The Estimated Glomerular Filtration Rate. STD. estimate of the test allowed.'
 
   adiponectin:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use mg/l.'
+    description: 'Adiponectin is a protein hormon and a adipokine involved glucose levels regulation and fatty acids breakdown.'
+    comments: 'The values in this package are reported in mg/l'
+    notes: 'Curators must use mg/l.'
 
   fasting_insulin:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use micro-units/ml.'
+    description: 'Blood concentration of insulin during fasting used to measure insulin resistance.'
+    comments: 'The values in this package are reported in micro-units/ml.'
+    notes: 'Curators must use micro-units/ml.'
 
   hba1c:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use %.'
+    description: 'Haemoglobin A1c: measure of the glycated (linked to a sugar) with respect to total haemoglobin.'
+    comments: 'Values in this package are reported in percentage (%).'
+    notes: 'Curators must use percentage (%).'
 
   c_peptide:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use ng/ml.'
+    description: 'Concentration of connecting peptide in the blood.'
+    comments: 'Values in this package are reported in ng/ml.'
+    notes: 'Curators must use ng/ml.'
 
   glp_1:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use pmol/l.'
+    description: 'Concentration of the glucagon-like peptide 1.'
+    comments: 'Values in this package are reported in pmol/l.'
+    notes: 'Curators must use pmol/l.'
 
   cd163:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use ng/ml.'
+    description: 'Cluster of Differentiation 163: high affinity scavenger receptor for the hemoglobin-haptoglobin complex.'
+    notes: 'Curators must use ng/ml.'
+    comments: 'Values in this package are reported in ng/ml. This protein is a marker of cells from the monocyte/macrophage \
+	lineage, and is upregulated in a variety of inflammatory diseases.'
 
   il_1:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use pg/ml.'
+    description: 'Concentration of Interleukine 1.'
+    notes: 'Curators must use pg/ml.'
+    comments: 'Values in this package are reported in pg/ml.'
 
   leptin:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use micrograms/l.'
+    description: 'Concentration of the leptin hormon, a hormone predominantly made by adipose cells and enterocytes in the small intestine that helps to regulate energy balance by inhibiting hunger.'
+    notes: 'Curators must use micrograms/l.'
+    comments: 'Values in this package are reported in micrograms/l.'
 
   glucose:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use mg/dl.'
+    description: 'Patient glucose blood concentration.'
+    notes: 'Curators must use mg/dl.'
+    comments: 'Values in this package are reported as mg/dl.'
 
   fasting_glucose:
     range: float
     required: false
     multivalued: false
-    description: 'Curators must use mg/dl.'
+    description: 'Patient glucose blood concentration at fasting.'
+    notes: 'Curators must use mg/dl.'
+    comments: 'Values in this packages are reported as mg/dl.'
 
   fgf_19:
     range: float
@@ -747,13 +831,16 @@ slots:
     range: float
     required: false
     multivalued: false
-    description: 'High-sensitivity C-reactive protein test result;curator have to use mg/L'
-
+    description: 'High-sensitivity C-reactive protein test result'
+    notes: 'Curator have to use mg/L.'
+    comments: 'Values in this package are reported in mg/L.'
+    
   ferm_milk_prod_consumer:
     required: false
     multivalued: false
     pattern: 'dfmp'
-    description: 'Dfmp means yes (defined milk product).'
+    description: 'Whether the subject is a consummer of DeFined Milk Product.'
+    comments: 'Dfmp means yes (defined milk product).'
 
   family:
     required: false
@@ -776,21 +863,20 @@ slots:
   c_section_type:
     required: false
     multivalued: false
-    pattern: 'Elective_CS
-    Emergency_CS'
+    pattern: 'Elective_CS|Emergency_CS'
     description: 'C-section main decision reason.'
 
   premature:
     range: YesNo
     required: false
     multivalued: false
-    description: 'If premature at birth.'
+    description: 'The subject was born prematurely.'
 
   birth_order:
     range: integer
     required: false
     multivalued: false
-    description: 'Can be used for multiple birth.'
+    description: 'Integer-based birth order of twins.'
 
   age_twins_started_to_live_apart:
     range: integer
@@ -808,13 +894,17 @@ slots:
     range: integer
     required: false
     multivalued: false
-    description: 'curator must use days'
+    description: 'Duration of the breastfeeding, referred in the child.'
+    comments: 'Values in this package are reported in days.'
+    notes: 'Curator must use days.'
 
   formula_first_day:
     range: integer
     required: false
     multivalued: false
-    description: 'the age infants get the first formula feeding in days'
+    description: 'The age infants get the first formula feeding (days).'
+    notes: 'Must be reported as an age in days.'
+    comments: 'It refers to the day of age.'
 
   ESR:
     range: float
@@ -1097,6 +1187,7 @@ slots:
     required: true
     multivalued: true
     description: 'Curator name.'
+    comment: 'It gives credit to the person who phisically curated the data, and allows to trace back possible missing data or sources of information.'
 
   uncurated_metadata:
     required: false
@@ -2013,11 +2104,11 @@ enums:
       Anna_Pedrotti:
       Francesca_DeFilippis:
       Aitor_Blanco_Miguez:
-      Arianna_Bonetti;Anna_Pedrotti:
-      Francesco_Asnicar;Paolo_Manghi:
-      Ilya_Likhotkin;Paolo_Manghi:
-      Aitor_Blanco_Miguez;Paolo_Manghi:
-      Giacomo_Damato;Paolo_Manghi:
-      Anna_Pedrotti;Paolo_Manghi:
+      Arianna_Bonetti:
+      Anna_Pedrotti:
+      Francesco_Asnicar:
+      Ilya_Likhotkin:
+      Aitor_Blanco_Miguez:
+      Giacomo_Damato:
       Mireia_VallesColomer:
 #study_condition, disease, disease_subtype slots can be pulled from disease_ontoology.yaml
